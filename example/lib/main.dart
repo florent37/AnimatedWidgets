@@ -18,29 +18,51 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: Column(
-          children: <Widget>[
-            RaisedButton(
-              onPressed: () {
-                setState(() {
-                  enabled = !enabled;
-                });
-              },
-              child: Text("animate"),
-            ),
-            RotationAnimatedWidget(
-              enabled: enabled,
-              values: [Rotation.deg(z: 0), Rotation.deg(z: 90)],
-              child: SizeAnimatedWidget.tween(
-                enabled: enabled,
-                sizeDisabled: Size(200, 200),
-                sizeEnabled: Size(300, 300),
-                child: FlutterLogo(),
-              ),
-            ),
-          ],
-        ),
+        body: MyScreen()
       ),
     );
   }
 }
+
+class MyScreen extends StatefulWidget {
+  @override
+  _MyScreenState createState() => _MyScreenState();
+}
+
+class _MyScreenState extends State<MyScreen> {
+
+  bool enabled = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      fit: StackFit.expand,
+      children: <Widget>[
+        Center(
+          child: RaisedButton(
+            onPressed: () {
+              setState(() {
+                enabled = !enabled;
+              });
+            },
+            child: Text("animate"),
+          ),
+        ),
+        Positioned(
+          bottom: 20,
+          left: 20,
+          right: 20,
+          child: TranslationAnimatedWidget(
+            enabled: enabled,
+            values: [Offset(0, 200), Offset(0, 0)],
+            child: RaisedButton(
+              onPressed: () {},
+              child: Text("Dismiss"),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
