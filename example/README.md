@@ -14,9 +14,11 @@ class _MyScreenState extends State<MyScreen> {
         Center(
           child: RaisedButton(
             onPressed: () {
+
               setState(() {
                 enabled = !enabled;
               });
+
             },
             child: Text("animate"),
           ),
