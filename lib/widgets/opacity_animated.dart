@@ -2,7 +2,6 @@ import 'package:animated_widgets/core/chain_tweens.dart';
 import 'package:flutter/material.dart';
 
 class OpacityAnimatedWidget extends StatefulWidget {
-
   final Widget child;
   final List<double> _values;
   final bool enabled;
@@ -19,7 +18,7 @@ class OpacityAnimatedWidget extends StatefulWidget {
     this.enabled = false,
     this.animationFinished,
     List<double> values = const [0, 1],
-  }) : this._values = values,
+  })  : this._values = values,
         assert(values.length > 1);
 
   OpacityAnimatedWidget.tween({
@@ -30,7 +29,13 @@ class OpacityAnimatedWidget extends StatefulWidget {
     Function(bool) animationFinished,
     Curve curve = Curves.linear,
     @required Widget child,
-  }) : this(duration: duration, enabled: enabled, curve: curve, child: child, animationFinished: animationFinished, values: [opacityDisabled, opacityEnabled]);
+  }) : this(
+            duration: duration,
+            enabled: enabled,
+            curve: curve,
+            child: child,
+            animationFinished: animationFinished,
+            values: [opacityDisabled, opacityEnabled]);
 
   List<double> get values => _values;
 
@@ -38,7 +43,8 @@ class OpacityAnimatedWidget extends StatefulWidget {
   createState() => _OpacityAnimatedWidgetState();
 }
 
-class _OpacityAnimatedWidgetState extends State<OpacityAnimatedWidget> with TickerProviderStateMixin {
+class _OpacityAnimatedWidgetState extends State<OpacityAnimatedWidget>
+    with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _animation;
 
@@ -70,18 +76,18 @@ class _OpacityAnimatedWidgetState extends State<OpacityAnimatedWidget> with Tick
       vsync: this,
       duration: widget.duration,
     )..addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        if(widget.animationFinished != null){
-          widget.animationFinished(widget.enabled);
+        if (status == AnimationStatus.completed) {
+          if (widget.animationFinished != null) {
+            widget.animationFinished(widget.enabled);
+          }
         }
-      }
-    });
+      });
 
     _animation = chainTweens(widget.values).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
     )..addListener(() {
-      setState(() {});
-    });
+        setState(() {});
+      });
   }
 
   @override

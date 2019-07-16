@@ -2,7 +2,6 @@ import 'package:animated_widgets/core/chain_tweens.dart';
 import 'package:flutter/material.dart';
 
 class SizeAnimatedWidget extends StatefulWidget {
-
   final Widget child;
   final List<Size> _values;
   final bool enabled;
@@ -19,7 +18,7 @@ class SizeAnimatedWidget extends StatefulWidget {
     this.enabled = false,
     this.animationFinished,
     List<Size> values = const [Size(0, 0), Size(100, 0)],
-  }) : this._values = values,
+  })  : this._values = values,
         assert(values.length > 1);
 
   SizeAnimatedWidget.tween({
@@ -30,7 +29,13 @@ class SizeAnimatedWidget extends StatefulWidget {
     Function(bool) animationFinished,
     Curve curve = Curves.linear,
     @required Widget child,
-  }) : this(duration: duration, enabled: enabled, curve: curve, child: child, animationFinished: animationFinished, values: [sizeDisabled, sizeEnabled]);
+  }) : this(
+            duration: duration,
+            enabled: enabled,
+            curve: curve,
+            child: child,
+            animationFinished: animationFinished,
+            values: [sizeDisabled, sizeEnabled]);
 
   List<Size> get values => _values;
 
@@ -38,7 +43,8 @@ class SizeAnimatedWidget extends StatefulWidget {
   createState() => _SizeAnimatedWidgetState();
 }
 
-class _SizeAnimatedWidgetState extends State<SizeAnimatedWidget> with TickerProviderStateMixin {
+class _SizeAnimatedWidgetState extends State<SizeAnimatedWidget>
+    with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _animationWidth;
   Animation<double> _animationHeight;
@@ -71,24 +77,26 @@ class _SizeAnimatedWidgetState extends State<SizeAnimatedWidget> with TickerProv
       vsync: this,
       duration: widget.duration,
     )..addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        if(widget.animationFinished != null){
-          widget.animationFinished(widget.enabled);
+        if (status == AnimationStatus.completed) {
+          if (widget.animationFinished != null) {
+            widget.animationFinished(widget.enabled);
+          }
         }
-      }
-    });
+      });
 
-    _animationWidth = chainTweens(widget.values.map((it) => it.width).toList()).animate(
+    _animationWidth =
+        chainTweens(widget.values.map((it) => it.width).toList()).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
     )..addListener(() {
-      setState(() {});
-    });
+            setState(() {});
+          });
 
-    _animationHeight = chainTweens(widget.values.map((it) => it.height).toList()).animate(
+    _animationHeight =
+        chainTweens(widget.values.map((it) => it.height).toList()).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
     )..addListener(() {
-      setState(() {});
-    });
+            setState(() {});
+          });
   }
 
   @override

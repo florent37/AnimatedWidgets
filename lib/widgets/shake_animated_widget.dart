@@ -20,27 +20,29 @@ class ShakeAnimatedWidget extends StatefulWidget {
   _ShakeAnimatedWidgetState createState() => _ShakeAnimatedWidgetState();
 }
 
-class _ShakeAnimatedWidgetState extends State<ShakeAnimatedWidget> with TickerProviderStateMixin {
+class _ShakeAnimatedWidgetState extends State<ShakeAnimatedWidget>
+    with TickerProviderStateMixin {
   AnimationController _animationController;
 
   @override
   void didUpdateWidget(ShakeAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if(widget.enabled) {
+    if (widget.enabled) {
       _animationController.repeat();
     } else {
       _createAnimations();
     }
   }
 
-  void _createAnimations(){
+  void _createAnimations() {
     _animationController?.dispose();
-    _animationController = AnimationController(duration: widget.shakeDuration , vsync: this)
-      ..addStatusListener((status) {
-        if (status == AnimationStatus.completed) {
-          _animationController.forward();
-        }
-      });
+    _animationController =
+        AnimationController(duration: widget.shakeDuration, vsync: this)
+          ..addStatusListener((status) {
+            if (status == AnimationStatus.completed) {
+              _animationController.forward();
+            }
+          });
   }
 
   @override
@@ -53,7 +55,8 @@ class _ShakeAnimatedWidgetState extends State<ShakeAnimatedWidget> with TickerPr
   Widget build(BuildContext context) {
     return RotationTransition(
       turns: chainTweens([0.0, widget.shakeAngle, 0.0, -widget.shakeAngle, 0.0])
-          .animate(      CurvedAnimation(parent: _animationController, curve: widget.curve),
+          .animate(
+        CurvedAnimation(parent: _animationController, curve: widget.curve),
       ),
       child: widget.child,
     );

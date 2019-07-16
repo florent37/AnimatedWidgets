@@ -1,7 +1,7 @@
 name: animated_widgets
 description: A new Flutter plugin.
 version: 0.0.1
-author: Florent Champigny
+author: Florent Champigny <champigny.florent@gmail.com>
 homepage: https://github.com/florent37/AnimatedWidgets
 
 environment:

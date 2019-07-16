@@ -2,7 +2,6 @@ import 'package:animated_widgets/core/chain_tweens.dart';
 import 'package:flutter/material.dart';
 
 class ScaleAnimatedWidget extends StatefulWidget {
-
   final Widget child;
   final List<double> _values;
   final bool enabled;
@@ -17,7 +16,7 @@ class ScaleAnimatedWidget extends StatefulWidget {
     this.duration = const Duration(seconds: 2),
     this.enabled = false,
     List<double> values = const [0, 1],
-  }) : this._values = values,
+  })  : this._values = values,
         assert(values.length > 1);
 
   ScaleAnimatedWidget.tween({
@@ -27,7 +26,12 @@ class ScaleAnimatedWidget extends StatefulWidget {
     bool enabled = true,
     Curve curve = Curves.linear,
     @required Widget child,
-  }) : this(duration: duration, enabled: enabled, curve: curve, child: child, values: [scaleDisabled, scaleEnabled]);
+  }) : this(
+            duration: duration,
+            enabled: enabled,
+            curve: curve,
+            child: child,
+            values: [scaleDisabled, scaleEnabled]);
 
   List<double> get values => _values;
 
@@ -35,7 +39,8 @@ class ScaleAnimatedWidget extends StatefulWidget {
   createState() => _ScaleAnimatedWidgetState();
 }
 
-class _ScaleAnimatedWidgetState extends State<ScaleAnimatedWidget> with TickerProviderStateMixin {
+class _ScaleAnimatedWidgetState extends State<ScaleAnimatedWidget>
+    with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _animation;
 
@@ -71,8 +76,8 @@ class _ScaleAnimatedWidgetState extends State<ScaleAnimatedWidget> with TickerPr
     _animation = chainTweens(widget.values).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
     )..addListener(() {
-      setState(() {});
-    });
+        setState(() {});
+      });
   }
 
   @override

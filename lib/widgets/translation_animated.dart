@@ -2,7 +2,6 @@ import 'package:animated_widgets/core/chain_tweens.dart';
 import 'package:flutter/material.dart';
 
 class TranslationAnimatedWidget extends StatefulWidget {
-
   final List<Offset> _values;
   final Duration duration;
   final bool enabled;
@@ -17,7 +16,7 @@ class TranslationAnimatedWidget extends StatefulWidget {
     this.curve = Curves.linear,
     this.animationFinished,
     @required this.child,
-  }) : this._values = values,
+  })  : this._values = values,
         assert(values.length > 1);
 
   TranslationAnimatedWidget.tween({
@@ -28,7 +27,13 @@ class TranslationAnimatedWidget extends StatefulWidget {
     Function(bool) animationFinished,
     Curve curve = Curves.linear,
     @required Widget child,
-  }) : this(duration: duration, enabled: enabled, curve: curve, child: child, animationFinished: animationFinished, values: [translationDisabled, translationEnabled]);
+  }) : this(
+            duration: duration,
+            enabled: enabled,
+            curve: curve,
+            child: child,
+            animationFinished: animationFinished,
+            values: [translationDisabled, translationEnabled]);
 
   List<Offset> get values => _values;
 
@@ -36,7 +41,8 @@ class TranslationAnimatedWidget extends StatefulWidget {
   _TranslationAnimatedWidget createState() => _TranslationAnimatedWidget();
 }
 
-class _TranslationAnimatedWidget extends State<TranslationAnimatedWidget> with TickerProviderStateMixin {
+class _TranslationAnimatedWidget extends State<TranslationAnimatedWidget>
+    with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _translationXAnim;
   Animation<double> _translationYAnim;
@@ -61,10 +67,10 @@ class _TranslationAnimatedWidget extends State<TranslationAnimatedWidget> with T
       duration: widget.duration,
       vsync: this,
     )..addStatusListener((status) {
-      if(widget.animationFinished != null){
-        widget.animationFinished(widget.enabled);
-      }
-    });
+        if (widget.animationFinished != null) {
+          widget.animationFinished(widget.enabled);
+        }
+      });
 
     _translationXAnim = chainTweens(
       widget.values.map((it) => it.dx).toList(),
