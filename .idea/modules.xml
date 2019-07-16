@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/animated_widgets.iml" filepath="$PROJECT_DIR$/animated_widgets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/animated_widgets_android.iml" filepath="$PROJECT_DIR$/android/animated_widgets_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/animated_widgets_example_android.iml" filepath="$PROJECT_DIR$/example/android/animated_widgets_example_android.iml" />
+    </modules>
+  </component>
+</project>

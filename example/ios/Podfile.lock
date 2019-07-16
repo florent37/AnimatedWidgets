@@ -1,0 +1,22 @@
+PODS:
+  - animated_widgets (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - animated_widgets (from `.symlinks/plugins/animated_widgets/ios`)
+  - Flutter (from `.symlinks/flutter/ios`)
+
+EXTERNAL SOURCES:
+  animated_widgets:
+    :path: ".symlinks/plugins/animated_widgets/ios"
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+
+SPEC CHECKSUMS:
+  animated_widgets: 8dc46f810cfbd2e77c4ab9b4c481bfd7be4c3fa2
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+
+PODFILE CHECKSUM: ebd43b443038e611b86ede96e613bd6033c49497
+
+COCOAPODS: 1.6.1
