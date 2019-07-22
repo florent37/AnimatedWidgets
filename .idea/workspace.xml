@@ -5,50 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="079d6184-9e42-45c8-9aff-25cae70e7925" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/bloc/first_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/bloc/first_screen_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/statefull/statefull_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/tap/tap_scale_animated.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/custom_animated.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/publish.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/bloc/first_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/bloc/first_screen_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/statefull/statefull_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/tap/tap_scale_animated.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/widgets/custom_animated.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/publish.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animated_widgets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/animated_widgets.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/animated_widgets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/animated_widgets.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/animated_widgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/animated_widgets.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/core/chain_tweens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/core/chain_tweens.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/opacity_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/opacity_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/rotation_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/rotation_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/scale_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/scale_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/shake_animated_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/shake_animated_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/size_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/size_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/translation_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/translation_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/animated_widgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/animated_widgets.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/chain_tweens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/chain_tweens.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/opacity_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/opacity_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/rotation_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/rotation_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/scale_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/scale_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/shake_animated_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/shake_animated_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/size_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/size_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/translation_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/translation_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/bloc/first_screen_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/bloc/first_screen_bloc.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -64,7 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/widgets/translation_animated.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-198">
@@ -88,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="106" column="3" lean-forward="true" selection-start-line="106" selection-start-column="3" selection-end-line="106" selection-end-column="3" />
+            <state relative-caret-position="103">
+              <caret line="76" column="88" selection-start-line="76" selection-start-column="88" selection-end-line="76" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -100,11 +58,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/lib/bloc/first_screen_bloc.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+            <state relative-caret-position="135">
+              <caret line="9" column="9" selection-start-line="9" selection-end-line="10" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/rxdart-0.22.0/lib/src/subjects/behavior_subject.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -114,18 +81,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="382">
               <caret line="64" column="31" selection-start-line="64" selection-end-line="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/widgets/scale_animated.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
-              <folding>
-                <element signature="e#0#57#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -205,7 +160,6 @@
         <option value="$PROJECT_DIR$/example/lib/firstScreen/first_screen_bloc.dart" />
         <option value="$PROJECT_DIR$/example/lib/firstScreen/first_screen.dart" />
         <option value="$PROJECT_DIR$/example/lib/main.dart" />
-        <option value="$PROJECT_DIR$/example/lib/bloc/first_screen_bloc.dart" />
         <option value="$PROJECT_DIR$/example/lib/statefull/statefull_screen.dart" />
         <option value="$PROJECT_DIR$/lib/widgets/opacity_animated.dart" />
         <option value="$PROJECT_DIR$/lib/widgets/custom_animated.dart" />
@@ -213,6 +167,7 @@
         <option value="$PROJECT_DIR$/lib/widgets/scale_animated.dart" />
         <option value="$PROJECT_DIR$/lib/widgets/size_animated.dart" />
         <option value="$PROJECT_DIR$/lib/widgets/translation_animated.dart" />
+        <option value="$PROJECT_DIR$/example/lib/bloc/first_screen_bloc.dart" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -355,12 +310,12 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32894737" />
-      <window_info anchor="bottom" id="Run" order="1" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Run" order="1" weight="0.32894737" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32894737" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" weight="0.32894737" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.32894737" />
-      <window_info anchor="bottom" id="Terminal" order="6" weight="0.32894737" />
+      <window_info anchor="bottom" id="Terminal" order="6" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
@@ -570,13 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/rxdart-0.22.0/lib/src/subjects/behavior_subject.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -649,29 +597,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="106" column="3" lean-forward="true" selection-start-line="106" selection-start-column="3" selection-end-line="106" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/statefull/statefull_screen.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/lib/bloc/first_screen_bloc.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -683,6 +614,30 @@
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/rxdart-0.22.0/lib/src/subjects/behavior_subject.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/bloc/first_screen_bloc.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="9" selection-start-line="9" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="76" column="88" selection-start-line="76" selection-start-column="88" selection-end-line="76" selection-end-column="88" />
         </state>
       </provider>
     </entry>

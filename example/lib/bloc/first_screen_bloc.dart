@@ -7,12 +7,12 @@ class FirstScreenViewState {
   final bool buttonVisible;
 
   const FirstScreenViewState({
-    this.buttonVisible,
+    this.buttonVisible = false,
   });
 }
 
 class FirstScreenBloc extends Bloc {
-  final _viewState = BehaviorSubject<FirstScreenViewState>();
+  final _viewState = BehaviorSubject<FirstScreenViewState>.seeded(FirstScreenViewState());
   Observable<FirstScreenViewState> get viewState => _viewState;
 
   FirstScreenBloc() {
