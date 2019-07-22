@@ -7,7 +7,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.2+4"
   async:
     dependency: transitive
     description:
@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.0"
+  bloc_provider:
+    dependency: "direct dev"
+    description:
+      name: bloc_provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.2+1"
   boolean_selector:
     dependency: transitive
     description:
@@ -88,6 +95,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.3"
+  rxdart:
+    dependency: "direct dev"
+    description:
+      name: rxdart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.22.0"
   sky_engine:
     dependency: transitive
     description: flutter

@@ -54,10 +54,10 @@ class RotationAnimatedWidget extends StatefulWidget {
   List<Rotation> get values => _values;
 
   @override
-  _TranslationAnimatedWidget createState() => _TranslationAnimatedWidget();
+  createState() => _State();
 }
 
-class _TranslationAnimatedWidget extends State<RotationAnimatedWidget>
+class _State extends State<RotationAnimatedWidget>
     with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _rotationXAnim;
@@ -71,7 +71,7 @@ class _TranslationAnimatedWidget extends State<RotationAnimatedWidget>
   }
 
   void _updateAnimationState() {
-    if (widget.enabled) {
+    if (widget.enabled ?? false) {
       _animationController.forward();
     } else {
       _animationController.reverse();

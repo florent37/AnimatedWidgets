@@ -17,10 +17,10 @@ class ShakeAnimatedWidget extends StatefulWidget {
   });
 
   @override
-  _ShakeAnimatedWidgetState createState() => _ShakeAnimatedWidgetState();
+  createState() => _State();
 }
 
-class _ShakeAnimatedWidgetState extends State<ShakeAnimatedWidget>
+class _State extends State<ShakeAnimatedWidget>
     with TickerProviderStateMixin {
   AnimationController _animationController;
 

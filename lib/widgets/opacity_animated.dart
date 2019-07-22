@@ -40,10 +40,10 @@ class OpacityAnimatedWidget extends StatefulWidget {
   List<double> get values => _values;
 
   @override
-  createState() => _OpacityAnimatedWidgetState();
+  createState() => _State();
 }
 
-class _OpacityAnimatedWidgetState extends State<OpacityAnimatedWidget>
+class _State extends State<OpacityAnimatedWidget>
     with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _animation;
@@ -62,7 +62,7 @@ class _OpacityAnimatedWidgetState extends State<OpacityAnimatedWidget>
   }
 
   void _updateAnimationState() async {
-    if (widget.enabled) {
+    if (widget.enabled ?? false) {
       await Future.delayed(widget.delay);
       _animationController.forward();
     } else {

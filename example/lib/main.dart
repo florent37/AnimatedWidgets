@@ -1,7 +1,8 @@
-import 'package:animated_widgets/animated_widgets.dart';
+import 'package:animated_widgets_example/bloc/first_screen.dart';
+import 'package:animated_widgets_example/statefull/statefull_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(home: MyApp()));
 
 class MyApp extends StatefulWidget {
   @override
@@ -13,56 +14,26 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: MyScreen()
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Plugin example app'),
+      ),
+      body: ListView(
+        children: <Widget>[
+          ListTile(
+            title: Text("With Bloc"),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstScreen()));
+            },
+          ),
+          ListTile(
+            title: Text("Stateless"),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => StatefulScreen()));
+            },
+          )
+        ],
       ),
     );
   }
 }
-
-class MyScreen extends StatefulWidget {
-  @override
-  _MyScreenState createState() => _MyScreenState();
-}
-
-class _MyScreenState extends State<MyScreen> {
-
-  bool enabled = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      fit: StackFit.expand,
-      children: <Widget>[
-        Center(
-          child: RaisedButton(
-            onPressed: () {
-              setState(() {
-                enabled = !enabled;
-              });
-            },
-            child: Text("animate"),
-          ),
-        ),
-        Positioned(
-          bottom: 20,
-          left: 20,
-          right: 20,
-          child: TranslationAnimatedWidget(
-            enabled: enabled,
-            values: [Offset(0, 200), Offset(0, 0)],
-            child: RaisedButton(
-              onPressed: () {},
-              child: Text("Dismiss"),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-

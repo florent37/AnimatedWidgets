@@ -38,10 +38,10 @@ class TranslationAnimatedWidget extends StatefulWidget {
   List<Offset> get values => _values;
 
   @override
-  _TranslationAnimatedWidget createState() => _TranslationAnimatedWidget();
+  createState() => _State();
 }
 
-class _TranslationAnimatedWidget extends State<TranslationAnimatedWidget>
+class _State extends State<TranslationAnimatedWidget>
     with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _translationXAnim;
@@ -54,7 +54,7 @@ class _TranslationAnimatedWidget extends State<TranslationAnimatedWidget>
   }
 
   void _updateAnimationState() {
-    if (widget.enabled) {
+    if (widget.enabled ?? false) {
       _animationController.forward();
     } else {
       _animationController.reverse();

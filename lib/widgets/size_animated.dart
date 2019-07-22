@@ -40,10 +40,10 @@ class SizeAnimatedWidget extends StatefulWidget {
   List<Size> get values => _values;
 
   @override
-  createState() => _SizeAnimatedWidgetState();
+  createState() => _State();
 }
 
-class _SizeAnimatedWidgetState extends State<SizeAnimatedWidget>
+class _State extends State<SizeAnimatedWidget>
     with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _animationWidth;
@@ -63,7 +63,7 @@ class _SizeAnimatedWidgetState extends State<SizeAnimatedWidget>
   }
 
   void _updateAnimationState() async {
-    if (widget.enabled) {
+    if (widget.enabled ?? false) {
       await Future.delayed(widget.delay);
       _animationController.forward();
     } else {
