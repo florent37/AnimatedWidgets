@@ -39,7 +39,7 @@ RotationAnimatedWidget.tween(
 
 Example using a Stateful Widget
 
-```
+```dart
 class _StatefulScreenState extends State<StatefulScreen> {
 
   // will determine if the opacity animation is launched
@@ -98,7 +98,7 @@ class _StatefulScreenState extends State<StatefulScreen> {
 
 Example using bloc pattern
 
-```
+```dart
 class FirstScreenBloc extends Bloc {
   final _viewState = BehaviorSubject<FirstScreenViewState>.seeded(FirstScreenViewState());
   Observable<FirstScreenViewState> get viewState => _viewState;
@@ -126,7 +126,7 @@ class FirstScreenViewState {
 }
 ```
 
-```
+```dart
 class FirstScreenView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

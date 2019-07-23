@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="079d6184-9e42-45c8-9aff-25cae70e7925" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/rotation/rotation_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/medias/opacity.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/medias/rotation.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/medias/translation.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/rotation/rotation_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/opacity.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/rotation.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/translation.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/bloc/first_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/bloc/first_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/statefull/statefull_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/statefull/statefull_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/bloc/first_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/bloc/first_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/statefull/statefull_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/statefull/statefull_screen.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -62,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
+            <state relative-caret-position="216">
+              <caret line="182" selection-start-line="182" selection-end-line="182" />
             </state>
           </provider>
         </entry>
@@ -301,7 +284,7 @@
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -314,9 +297,9 @@
       <window_info anchor="bottom" id="Run" order="1" weight="0.32894737" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32894737" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Logcat" order="4" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Logcat" order="4" weight="0.32894737" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.32894737" />
-      <window_info anchor="bottom" id="Terminal" order="6" weight="0.32894737" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="6" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
@@ -655,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
+        <state relative-caret-position="216">
+          <caret line="182" selection-start-line="182" selection-end-line="182" />
         </state>
       </provider>
     </entry>
