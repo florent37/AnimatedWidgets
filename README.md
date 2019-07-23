@@ -3,15 +3,17 @@
 Easily add animations on your screen with AnimatedWidgets.
 Add always your animated widgets in your component's tree, then activate them when you want to activate the animations.
 
+Available widgets : `TranslationAnimatedWidget`, `OpacityAnimatedWidget`, `RotationAnimatedWidget`, `ScaleAnimatedWidget`, `SizeAnimatedWidget`
+
 For example : add a TranslationAnimatedWidget on a button, then activate it to display it !
 
 ```dart
 TranslationAnimatedWidget(
     enabled: this.displayMyWidget,
     values: [
-        Offset(0, 200),  //enabled value
-        Offset(0, 250),  //intermediate value
-        Offset(0, 0) // disabled value value
+        Offset(0, 200), // disabled value value
+        Offset(0, 250), //intermediate value
+        Offset(0, 0) //enabled value
     ],
     child: /* your widget */
 ),
@@ -32,6 +34,25 @@ RotationAnimatedWidget.tween(
 ```
 
 [![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/rotation.gif)](https://www.github.com/florent37/AnimatedWidgets)
+
+# Compose
+
+Don't hesitate to compose them
+
+TranslationAnimatedWidget.tween(
+    enabled: this.displayMyWidget,
+    translationDisabled: Offset(0, 200),
+    translationEnabled: Offset(0, 0),
+    child:
+        OpacityAnimatedWidget.tween(
+        enabled: this.displayMyWidget,
+        opacityDisabled: 0,
+        opacityEnabled: 1,
+        child: /* your widget */
+    ),
+),
+
+[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/compose.gif)](https://www.github.com/florent37/AnimatedWidgets)
 
 # Opacity
 

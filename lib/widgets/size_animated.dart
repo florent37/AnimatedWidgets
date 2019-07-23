@@ -1,4 +1,5 @@
 import 'package:animated_widgets/core/chain_tweens.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class SizeAnimatedWidget extends StatefulWidget {
@@ -59,7 +60,14 @@ class _State extends State<SizeAnimatedWidget>
   @override
   void didUpdateWidget(SizeAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    _updateAnimationState();
+    if(listEquals(oldWidget.values, widget.values)){
+      if(widget.enabled != oldWidget.enabled) {
+        _updateAnimationState();
+      }
+    } else {
+      _createAnimations();
+      _updateAnimationState();
+    }
   }
 
   void _updateAnimationState() async {

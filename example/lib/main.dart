@@ -3,6 +3,8 @@ import 'package:animated_widgets_example/rotation/rotation_screen.dart';
 import 'package:animated_widgets_example/statefull/statefull_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'compose/compose_screen.dart';
+
 void main() => runApp(MaterialApp(home: MyApp()));
 
 class MyApp extends StatefulWidget {
@@ -37,6 +39,12 @@ class _MyAppState extends State<MyApp> {
             title: Text("Rotation"),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => RotationScreen()));
+            },
+          ),
+          ListTile(
+            title: Text("Compose"),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ComposeScreen()));
             },
           )
         ],

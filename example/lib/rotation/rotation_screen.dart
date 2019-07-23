@@ -22,11 +22,12 @@ class _RotationScreenState extends State<RotationScreen> {
             RotationAnimatedWidget(
               values: [Rotation.deg(), Rotation.deg(z: 90, x: 80)],
               enabled: _enabled,
+              curve: Curves.easeIn,
               child: Container(
                 height: 200,
                 width: 200,
                 child: FlutterLogo(
-                  style: FlutterLogoStyle.stacked,
+                  style: FlutterLogoStyle.markOnly,
                 ),
               ),
             ),

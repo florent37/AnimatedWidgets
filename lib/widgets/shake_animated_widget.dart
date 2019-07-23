@@ -27,10 +27,12 @@ class _State extends State<ShakeAnimatedWidget>
   @override
   void didUpdateWidget(ShakeAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.enabled) {
-      _animationController.repeat();
-    } else {
-      _createAnimations();
+    if(oldWidget.enabled != widget.enabled) {
+      if (widget.enabled) {
+        _animationController.repeat();
+      } else {
+        _createAnimations();
+      }
     }
   }
 

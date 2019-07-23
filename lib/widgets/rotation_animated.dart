@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:animated_widgets/core/chain_tweens.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
 
@@ -12,6 +13,21 @@ class Rotation {
   const Rotation.radians({this.x = 0, this.y = 0, this.z = 0});
   Rotation.deg({double x = 0, double y = 0, double z = 0})
       : this.radians(x: radians(x), y: radians(y), z: radians(z));
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is Rotation &&
+              runtimeType == other.runtimeType &&
+              x == other.x &&
+              y == other.y &&
+              z == other.z;
+
+  @override
+  int get hashCode =>
+      x.hashCode ^
+      y.hashCode ^
+      z.hashCode;
 }
 
 class RotationAnimatedWidget extends StatefulWidget {
@@ -67,7 +83,13 @@ class _State extends State<RotationAnimatedWidget>
   @override
   void didUpdateWidget(RotationAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    _updateAnimationState();
+    if(listEquals(oldWidget.values, widget.values)){
+      if(widget.enabled != oldWidget.enabled) {
+        _updateAnimationState();
+      }    } else {
+      _createAnimations();
+      _updateAnimationState();
+    }
   }
 
   void _updateAnimationState() {

@@ -1,4 +1,5 @@
 import 'package:animated_widgets/core/chain_tweens.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class OpacityAnimatedWidget extends StatefulWidget {
@@ -58,7 +59,14 @@ class _State extends State<OpacityAnimatedWidget>
   @override
   void didUpdateWidget(OpacityAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    _updateAnimationState();
+    if(listEquals(oldWidget.values, widget.values)){
+      if(widget.enabled != oldWidget.enabled) {
+        _updateAnimationState();
+      }
+    } else {
+      _createAnimations();
+      _updateAnimationState();
+    }
   }
 
   void _updateAnimationState() async {
