@@ -46,9 +46,9 @@ class OpacityAnimatedWidget extends StatefulWidget {
   //except the boolean `enabled`
   bool isAnimationEqual(OpacityAnimatedWidget other) =>
       listEquals(values, other.values) &&
-          duration == other.duration &&
-          curve == other.curve &&
-          delay == other.delay;
+      duration == other.duration &&
+      curve == other.curve &&
+      delay == other.delay;
 }
 
 class _State extends State<OpacityAnimatedWidget>

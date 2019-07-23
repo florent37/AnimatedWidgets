@@ -47,7 +47,11 @@ class SizeAnimatedWidget extends StatefulWidget {
   createState() => _State();
 
   //except the boolean `enabled`
-  bool isAnimationEqual(SizeAnimatedWidget other) => listEquals(values, other.values) && duration == other.duration && curve == other.curve && delay == other.delay;
+  bool isAnimationEqual(SizeAnimatedWidget other) =>
+      listEquals(values, other.values) &&
+      duration == other.duration &&
+      curve == other.curve &&
+      delay == other.delay;
 }
 
 class _State extends State<SizeAnimatedWidget> with TickerProviderStateMixin {
@@ -99,17 +103,19 @@ class _State extends State<SizeAnimatedWidget> with TickerProviderStateMixin {
         }
       });
 
-    _animationWidth = chainTweens(widget.values.map((it) => it.width).toList()).animate(
+    _animationWidth =
+        chainTweens(widget.values.map((it) => it.width).toList()).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
     )..addListener(() {
-        setState(() {});
-      });
+            setState(() {});
+          });
 
-    _animationHeight = chainTweens(widget.values.map((it) => it.height).toList()).animate(
+    _animationHeight =
+        chainTweens(widget.values.map((it) => it.height).toList()).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
     )..addListener(() {
-        setState(() {});
-      });
+            setState(() {});
+          });
   }
 
   @override

@@ -18,11 +18,11 @@ class Rotation {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Rotation &&
-              runtimeType == other.runtimeType &&
-              x == other.x &&
-              y == other.y &&
-              z == other.z;
+      other is Rotation &&
+          runtimeType == other.runtimeType &&
+          x == other.x &&
+          y == other.y &&
+          z == other.z;
 
   @override
   int get hashCode => x.hashCode ^ y.hashCode ^ z.hashCode;
@@ -48,8 +48,7 @@ class RotationAnimatedWidget extends StatefulWidget {
     this.animationFinished,
     this.curve = Curves.linear,
     @required this.child,
-  })
-      : this._values = values,
+  })  : this._values = values,
         assert(values.length > 1);
 
   RotationAnimatedWidget.tween({
@@ -62,13 +61,13 @@ class RotationAnimatedWidget extends StatefulWidget {
     Curve curve = Curves.linear,
     @required Widget child,
   }) : this(
-      duration: duration,
-      enabled: enabled,
-      curve: curve,
-      delay: delay,
-      child: child,
-      animationFinished: animationFinished,
-      values: [rotationDisabled, rotationEnabled]);
+            duration: duration,
+            enabled: enabled,
+            curve: curve,
+            delay: delay,
+            child: child,
+            animationFinished: animationFinished,
+            values: [rotationDisabled, rotationEnabled]);
 
   List<Rotation> get values => _values;
 
@@ -78,9 +77,9 @@ class RotationAnimatedWidget extends StatefulWidget {
   //except the boolean `enabled`
   bool isAnimationEqual(RotationAnimatedWidget other) =>
       listEquals(values, other.values) &&
-          duration == other.duration &&
-          curve == other.curve &&
-          delay == other.delay;
+      duration == other.duration &&
+      curve == other.curve &&
+      delay == other.delay;
 }
 
 class _State extends State<RotationAnimatedWidget>
@@ -117,36 +116,33 @@ class _State extends State<RotationAnimatedWidget>
   void _createAnimations() {
     _animationController?.dispose();
     _animationController =
-    AnimationController(duration: widget.duration, vsync: this)
-      ..addStatusListener((status) {
-        if (widget.animationFinished != null) {
-          widget.animationFinished(widget.enabled);
-        }
-      });
+        AnimationController(duration: widget.duration, vsync: this)
+          ..addStatusListener((status) {
+            if (widget.animationFinished != null) {
+              widget.animationFinished(widget.enabled);
+            }
+          });
 
     _rotationXAnim =
-    chainTweens(widget._values.map((it) => it.x).toList()).animate(
+        chainTweens(widget._values.map((it) => it.x).toList()).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
-    )
-      ..addListener(() {
-        setState(() {});
-      });
+    )..addListener(() {
+            setState(() {});
+          });
 
     _rotationYAnim =
-    chainTweens(widget._values.map((it) => it.y).toList()).animate(
+        chainTweens(widget._values.map((it) => it.y).toList()).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
-    )
-      ..addListener(() {
-        setState(() {});
-      });
+    )..addListener(() {
+            setState(() {});
+          });
 
     _rotationZAnim =
-    chainTweens(widget._values.map((it) => it.z).toList()).animate(
+        chainTweens(widget._values.map((it) => it.z).toList()).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
-    )
-      ..addListener(() {
-        setState(() {});
-      });
+    )..addListener(() {
+            setState(() {});
+          });
     _updateAnimationState();
   }
 

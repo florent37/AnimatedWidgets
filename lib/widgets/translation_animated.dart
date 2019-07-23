@@ -47,10 +47,15 @@ class TranslationAnimatedWidget extends StatefulWidget {
   createState() => _State();
 
   //except the boolean `enabled`
-  bool isAnimationEqual(TranslationAnimatedWidget other) => listEquals(values, other.values) && duration == other.duration && curve == other.curve && delay == other.delay;
+  bool isAnimationEqual(TranslationAnimatedWidget other) =>
+      listEquals(values, other.values) &&
+      duration == other.duration &&
+      curve == other.curve &&
+      delay == other.delay;
 }
 
-class _State extends State<TranslationAnimatedWidget> with TickerProviderStateMixin {
+class _State extends State<TranslationAnimatedWidget>
+    with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _translationXAnim;
   Animation<double> _translationYAnim;
