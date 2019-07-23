@@ -1,7 +1,8 @@
 # animated_widgets
 
 Easily add animations on your screen with AnimatedWidgets.
-Add always your animated widgets in your component's tree, then activate them when you want to activate the animations.
+
+Optimized for MVVM using Bloc, updating the `enabled` value of the widget will forward or reverse the animation.
 
 Available widgets : `TranslationAnimatedWidget`, `OpacityAnimatedWidget`, `RotationAnimatedWidget`, `ScaleAnimatedWidget`, `SizeAnimatedWidget`
 
