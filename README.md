@@ -20,7 +20,7 @@ TranslationAnimatedWidget(
 [![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/translation.gif)](https://www.github.com/florent37/AnimatedWidgets)
 
 
-or using a tween constructor
+or using a `tween constructor`
 
 ```dart
 RotationAnimatedWidget.tween(
@@ -37,7 +37,7 @@ RotationAnimatedWidget.tween(
 
 [![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/opacity.gif)](https://www.github.com/florent37/AnimatedWidgets)
 
-Example using a Stateful Widget
+Example using a `Stateful Widget`
 
 ```dart
 class _StatefulScreenState extends State<StatefulScreen> {
@@ -96,7 +96,7 @@ class _StatefulScreenState extends State<StatefulScreen> {
 
 [![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/translation.gif)](https://www.github.com/florent37/AnimatedWidgets)
 
-Example using bloc pattern
+Example using `bloc` pattern
 
 ```dart
 class FirstScreenBloc extends Bloc {
