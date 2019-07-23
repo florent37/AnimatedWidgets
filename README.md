@@ -266,6 +266,24 @@ SizeAnimatedWidget(
 
 # Custom Animated
 
+```dart
+CustomAnimatedWidget(
+      enabled: this._enabled,
+      duration: Duration(seconds: 3),
+      curve: Curves.easeOut,
+      builder: (context, percent) { //for custom animation, use builders
+        final int displayedDate = (2018 * percent).floor();
+        return Container(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(border: Border.all(color: Colors.blue)),
+            child: Text(
+              "current year : $displayedDate",
+              style: TextStyle(color: Colors.blue),
+            ));
+      },
+),
+```
+
 [![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/custom.gif)](https://www.github.com/florent37/AnimatedWidgets)
 
 ## Flutter Package

@@ -6,6 +6,7 @@ import 'package:animated_widgets_example/statefull/statefull_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'compose/compose_screen.dart';
+import 'custom/custom_screen.dart';
 
 void main() => runApp(MaterialApp(home: MyApp()));
 
@@ -59,6 +60,12 @@ class _MyAppState extends State<MyApp> {
             title: Text("Size"),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => SizeScreen()));
+            },
+          ),
+          ListTile(
+            title: Text("Custom"),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomScreen()));
             },
           )
         ],

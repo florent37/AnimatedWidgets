@@ -4,9 +4,9 @@ typedef CustomBuilder = Widget Function(BuildContext context, double percent);
 
 class CustomAnimatedWidget extends StatefulWidget {
   final Duration duration;
+  final Duration delay;
   final CustomBuilder builder;
   final bool enabled;
-  final Widget child;
   final Curve curve;
   final Function(bool) animationFinished;
 
@@ -14,13 +14,19 @@ class CustomAnimatedWidget extends StatefulWidget {
     this.duration = const Duration(milliseconds: 500),
     @required this.builder,
     this.enabled = true,
+    this.delay = const Duration(),
     this.animationFinished,
     this.curve = Curves.linear,
-    @required this.child,
   });
 
   @override
   createState() => _CustomAnimatedWidget();
+
+  //except the boolean `enabled`
+  bool isAnimationEqual(CustomAnimatedWidget other) =>
+          duration == other.duration &&
+          curve == other.curve &&
+          delay == other.delay;
 }
 
 class _CustomAnimatedWidget extends State<CustomAnimatedWidget>
@@ -31,11 +37,21 @@ class _CustomAnimatedWidget extends State<CustomAnimatedWidget>
   @override
   void didUpdateWidget(CustomAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    _updateAnimationState();
+    if (widget.isAnimationEqual(oldWidget)) {
+      if (widget.enabled != oldWidget.enabled) {
+        _updateAnimationState();
+      }
+    } else {
+      _createAnimations();
+      if (widget.enabled != oldWidget.enabled) {
+        _updateAnimationState();
+      }
+    }
   }
 
-  void _updateAnimationState() {
+  void _updateAnimationState() async {
     if (widget.enabled ?? false) {
+      await Future.delayed(widget.delay);
       _animationController.forward();
     } else {
       _animationController.reverse();
