@@ -9,7 +9,7 @@ For example : add a TranslationAnimatedWidget on a button, then activate it to d
 
 ```dart
 TranslationAnimatedWidget(
-    enabled: this.displayMyWidget,
+    enabled: this.displayMyWidget, //update this boolean to forward/reverse the animation
     values: [
         Offset(0, 200), // disabled value value
         Offset(0, 250), //intermediate value
@@ -26,7 +26,7 @@ or using a `tween constructor`
 
 ```dart
 RotationAnimatedWidget.tween(
-    enabled: this.displayMyWidget,
+    enabled: this.displayMyWidget, //update this boolean to forward/reverse the animation
     rotationDisabled: Rotation.degrees(z: 0),
     rotationEnabled: Rotation.degrees(z: 90),
     child: /* your widget */
