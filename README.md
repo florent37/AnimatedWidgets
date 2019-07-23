@@ -7,7 +7,7 @@ For example : add a TranslationAnimatedWidget on a button, then activate it to d
 
 ```dart
 TranslationAnimatedWidget(
-    enabled: enabled,
+    enabled: this.displayMyWidget,
     values: [
         Offset(0, 200),  //enabled value
         Offset(0, 250),  //intermediate value
@@ -24,7 +24,7 @@ or using a `tween constructor`
 
 ```dart
 RotationAnimatedWidget.tween(
-    enabled: enabled,
+    enabled: this.displayMyWidget,
     rotationDisabled: Rotation.degrees(z: 0),
     rotationEnabled: Rotation.degrees(z: 90),
     child: /* your widget */
