@@ -59,8 +59,8 @@ class _State extends State<OpacityAnimatedWidget>
   @override
   void didUpdateWidget(OpacityAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if(listEquals(oldWidget.values, widget.values)){
-      if(widget.enabled != oldWidget.enabled) {
+    if (listEquals(oldWidget.values, widget.values)) {
+      if (widget.enabled != oldWidget.enabled) {
         _updateAnimationState();
       }
     } else {

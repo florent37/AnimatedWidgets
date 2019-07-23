@@ -2,7 +2,7 @@
 
 Easily add animations on your screen with AnimatedWidgets.
 
-Optimized for MVVM using Bloc, updating the `enabled` value of the widget will forward or reverse the animation.
+Optimized for MVVM using *Bloc*, updating the `enabled` value of the widget will forward or reverse the animation.
 
 Available widgets : `TranslationAnimatedWidget`, `OpacityAnimatedWidget`, `RotationAnimatedWidget`, `ScaleAnimatedWidget`, `SizeAnimatedWidget`
 
@@ -230,6 +230,16 @@ RotationAnimatedWidget.tween(
 # Custom Animated
 
 [![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/custom.gif)](https://www.github.com/florent37/AnimatedWidgets)
+
+## Flutter Package
+
+Animated widget is available at
+https://pub.dev/packages/animated_widgets
+
+```
+dependencies:
+  animated_widgets:
+```
 
 ## Getting Started with Flutter
 

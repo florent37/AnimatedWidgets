@@ -40,8 +40,7 @@ class ScaleAnimatedWidget extends StatefulWidget {
   createState() => _State();
 }
 
-class _State extends State<ScaleAnimatedWidget>
-    with TickerProviderStateMixin {
+class _State extends State<ScaleAnimatedWidget> with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _animation;
 
@@ -55,13 +54,15 @@ class _State extends State<ScaleAnimatedWidget>
   @override
   void didUpdateWidget(ScaleAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if(listEquals(oldWidget.values, widget.values)){
-      if(widget.enabled != oldWidget.enabled) {
+    if (listEquals(oldWidget.values, widget.values)) {
+      if (widget.enabled != oldWidget.enabled) {
         _updateAnimationState();
-      }    } else {
+      }
+    } else {
       _createAnimations();
       _updateAnimationState();
-    }  }
+    }
+  }
 
   void _updateAnimationState() async {
     if (widget.enabled ?? false) {

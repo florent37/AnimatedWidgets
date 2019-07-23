@@ -51,13 +51,15 @@ class _State extends State<TranslationAnimatedWidget>
   @override
   void didUpdateWidget(TranslationAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if(listEquals(oldWidget.values, widget.values)){
-      if(widget.enabled != oldWidget.enabled) {
+    if (listEquals(oldWidget.values, widget.values)) {
+      if (widget.enabled != oldWidget.enabled) {
         _updateAnimationState();
-      }    } else {
+      }
+    } else {
       _createAnimations();
       _updateAnimationState();
-    }  }
+    }
+  }
 
   void _updateAnimationState() {
     if (widget.enabled ?? false) {

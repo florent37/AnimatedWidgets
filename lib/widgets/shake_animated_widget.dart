@@ -20,14 +20,13 @@ class ShakeAnimatedWidget extends StatefulWidget {
   createState() => _State();
 }
 
-class _State extends State<ShakeAnimatedWidget>
-    with TickerProviderStateMixin {
+class _State extends State<ShakeAnimatedWidget> with TickerProviderStateMixin {
   AnimationController _animationController;
 
   @override
   void didUpdateWidget(ShakeAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if(oldWidget.enabled != widget.enabled) {
+    if (oldWidget.enabled != widget.enabled) {
       if (widget.enabled) {
         _animationController.repeat();
       } else {

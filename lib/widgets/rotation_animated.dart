@@ -17,17 +17,14 @@ class Rotation {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Rotation &&
-              runtimeType == other.runtimeType &&
-              x == other.x &&
-              y == other.y &&
-              z == other.z;
+      other is Rotation &&
+          runtimeType == other.runtimeType &&
+          x == other.x &&
+          y == other.y &&
+          z == other.z;
 
   @override
-  int get hashCode =>
-      x.hashCode ^
-      y.hashCode ^
-      z.hashCode;
+  int get hashCode => x.hashCode ^ y.hashCode ^ z.hashCode;
 }
 
 class RotationAnimatedWidget extends StatefulWidget {
@@ -83,10 +80,11 @@ class _State extends State<RotationAnimatedWidget>
   @override
   void didUpdateWidget(RotationAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if(listEquals(oldWidget.values, widget.values)){
-      if(widget.enabled != oldWidget.enabled) {
+    if (listEquals(oldWidget.values, widget.values)) {
+      if (widget.enabled != oldWidget.enabled) {
         _updateAnimationState();
-      }    } else {
+      }
+    } else {
       _createAnimations();
       _updateAnimationState();
     }
