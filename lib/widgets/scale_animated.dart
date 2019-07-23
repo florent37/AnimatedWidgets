@@ -38,6 +38,14 @@ class ScaleAnimatedWidget extends StatefulWidget {
 
   @override
   createState() => _State();
+
+  //except the boolean `enabled`
+  bool isAnimationEqual(ScaleAnimatedWidget other) =>
+              listEquals(values, other.values) &&
+            duration == other.duration &&
+            curve == other.curve &&
+            delay == other.delay;
+
 }
 
 class _State extends State<ScaleAnimatedWidget> with TickerProviderStateMixin {
@@ -54,13 +62,15 @@ class _State extends State<ScaleAnimatedWidget> with TickerProviderStateMixin {
   @override
   void didUpdateWidget(ScaleAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (listEquals(oldWidget.values, widget.values)) {
+    if (widget.isAnimationEqual(oldWidget)) {
       if (widget.enabled != oldWidget.enabled) {
         _updateAnimationState();
       }
     } else {
       _createAnimations();
-      _updateAnimationState();
+      if (widget.enabled != oldWidget.enabled) {
+        _updateAnimationState();
+      }
     }
   }
 

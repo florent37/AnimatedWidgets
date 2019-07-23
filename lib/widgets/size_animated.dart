@@ -24,6 +24,7 @@ class SizeAnimatedWidget extends StatefulWidget {
 
   SizeAnimatedWidget.tween({
     Duration duration = const Duration(milliseconds: 500),
+    Duration delay = const Duration(milliseconds: 500),
     Size sizeEnabled = const Size(100, 100),
     Size sizeDisabled = const Size(0, 0),
     bool enabled = true,
@@ -31,17 +32,22 @@ class SizeAnimatedWidget extends StatefulWidget {
     Curve curve = Curves.linear,
     @required Widget child,
   }) : this(
-            duration: duration,
-            enabled: enabled,
-            curve: curve,
-            child: child,
-            animationFinished: animationFinished,
-            values: [sizeDisabled, sizeEnabled]);
+          duration: duration,
+          enabled: enabled,
+          curve: curve,
+          child: child,
+          delay: delay,
+          animationFinished: animationFinished,
+          values: [sizeDisabled, sizeEnabled],
+        );
 
   List<Size> get values => _values;
 
   @override
   createState() => _State();
+
+  //except the boolean `enabled`
+  bool isAnimationEqual(SizeAnimatedWidget other) => listEquals(values, other.values) && duration == other.duration && curve == other.curve && delay == other.delay;
 }
 
 class _State extends State<SizeAnimatedWidget> with TickerProviderStateMixin {
@@ -59,13 +65,15 @@ class _State extends State<SizeAnimatedWidget> with TickerProviderStateMixin {
   @override
   void didUpdateWidget(SizeAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (listEquals(oldWidget.values, widget.values)) {
+    if (widget.isAnimationEqual(oldWidget)) {
       if (widget.enabled != oldWidget.enabled) {
         _updateAnimationState();
       }
     } else {
       _createAnimations();
-      _updateAnimationState();
+      if (widget.enabled != oldWidget.enabled) {
+        _updateAnimationState();
+      }
     }
   }
 
@@ -91,19 +99,17 @@ class _State extends State<SizeAnimatedWidget> with TickerProviderStateMixin {
         }
       });
 
-    _animationWidth =
-        chainTweens(widget.values.map((it) => it.width).toList()).animate(
+    _animationWidth = chainTweens(widget.values.map((it) => it.width).toList()).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
     )..addListener(() {
-            setState(() {});
-          });
+        setState(() {});
+      });
 
-    _animationHeight =
-        chainTweens(widget.values.map((it) => it.height).toList()).animate(
+    _animationHeight = chainTweens(widget.values.map((it) => it.height).toList()).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
     )..addListener(() {
-            setState(() {});
-          });
+        setState(() {});
+      });
   }
 
   @override

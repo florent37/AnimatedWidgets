@@ -1,5 +1,7 @@
 import 'package:animated_widgets_example/bloc/first_screen.dart';
 import 'package:animated_widgets_example/rotation/rotation_screen.dart';
+import 'package:animated_widgets_example/scale/scale_screen.dart';
+import 'package:animated_widgets_example/size/size_screen.dart';
 import 'package:animated_widgets_example/statefull/statefull_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -45,6 +47,18 @@ class _MyAppState extends State<MyApp> {
             title: Text("Compose"),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => ComposeScreen()));
+            },
+          ),
+          ListTile(
+            title: Text("Scale"),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ScaleScreen()));
+            },
+          ),
+          ListTile(
+            title: Text("Size"),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => SizeScreen()));
             },
           )
         ],

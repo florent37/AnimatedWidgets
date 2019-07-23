@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class TranslationAnimatedWidget extends StatefulWidget {
   final List<Offset> _values;
   final Duration duration;
+  final Duration delay;
   final bool enabled;
   final Curve curve;
   final Widget child;
@@ -12,6 +13,7 @@ class TranslationAnimatedWidget extends StatefulWidget {
 
   TranslationAnimatedWidget({
     this.duration = const Duration(milliseconds: 500),
+    this.delay = const Duration(),
     List<Offset> values = const [const Offset(0, 0), const Offset(0, 200)],
     this.enabled = true,
     this.curve = Curves.linear,
@@ -22,6 +24,7 @@ class TranslationAnimatedWidget extends StatefulWidget {
 
   TranslationAnimatedWidget.tween({
     Duration duration = const Duration(milliseconds: 500),
+    Duration delay = const Duration(),
     Offset translationEnabled = const Offset(0, 0),
     Offset translationDisabled = const Offset(0, 200),
     bool enabled = true,
@@ -29,21 +32,25 @@ class TranslationAnimatedWidget extends StatefulWidget {
     Curve curve = Curves.linear,
     @required Widget child,
   }) : this(
-            duration: duration,
-            enabled: enabled,
-            curve: curve,
-            child: child,
-            animationFinished: animationFinished,
-            values: [translationDisabled, translationEnabled]);
+          duration: duration,
+          enabled: enabled,
+          curve: curve,
+          delay: delay,
+          child: child,
+          animationFinished: animationFinished,
+          values: [translationDisabled, translationEnabled],
+        );
 
   List<Offset> get values => _values;
 
   @override
   createState() => _State();
+
+  //except the boolean `enabled`
+  bool isAnimationEqual(TranslationAnimatedWidget other) => listEquals(values, other.values) && duration == other.duration && curve == other.curve && delay == other.delay;
 }
 
-class _State extends State<TranslationAnimatedWidget>
-    with TickerProviderStateMixin {
+class _State extends State<TranslationAnimatedWidget> with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _translationXAnim;
   Animation<double> _translationYAnim;
@@ -51,18 +58,21 @@ class _State extends State<TranslationAnimatedWidget>
   @override
   void didUpdateWidget(TranslationAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (listEquals(oldWidget.values, widget.values)) {
+    if (widget.isAnimationEqual(oldWidget)) {
       if (widget.enabled != oldWidget.enabled) {
         _updateAnimationState();
       }
     } else {
       _createAnimations();
-      _updateAnimationState();
+      if (widget.enabled != oldWidget.enabled) {
+        _updateAnimationState();
+      }
     }
   }
 
-  void _updateAnimationState() {
+  void _updateAnimationState() async {
     if (widget.enabled ?? false) {
+      await Future.delayed(widget.delay);
       _animationController.forward();
     } else {
       _animationController.reverse();

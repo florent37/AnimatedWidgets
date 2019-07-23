@@ -221,9 +221,46 @@ RotationAnimatedWidget.tween(
 
 # Scale
 
+```dart
+ScaleAnimatedWidget.tween(
+      enabled: this._enabled,
+      duration: Duration(milliseconds: 600),
+      scaleDisabled: 0.5,
+      scaleEnabled: 1,
+
+      //your widget
+      child: Container(
+        height: 200,
+        width: 200,
+        child: FlutterLogo(
+          style: FlutterLogoStyle.stacked,
+        ),
+      ),
+    ),
+```
+
 [![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/scale.gif)](https://www.github.com/florent37/AnimatedWidgets)
 
 # Size
+
+```dart
+SizeAnimatedWidget(
+      enabled: this._enabled,
+      duration: Duration(milliseconds: 1500),
+      values: [Size(100, 100),  Size(100, 150), Size(200, 150), Size(200, 200)],
+      curve: Curves.linear,
+
+      //your widget
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.blue)
+        ),
+        child: FlutterLogo(
+          style: FlutterLogoStyle.stacked,
+        ),
+      ),
+    ),
+```
 
 [![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/size.gif)](https://www.github.com/florent37/AnimatedWidgets)
 

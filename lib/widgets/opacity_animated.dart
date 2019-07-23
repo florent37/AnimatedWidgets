@@ -42,6 +42,13 @@ class OpacityAnimatedWidget extends StatefulWidget {
 
   @override
   createState() => _State();
+
+  //except the boolean `enabled`
+  bool isAnimationEqual(OpacityAnimatedWidget other) =>
+      listEquals(values, other.values) &&
+          duration == other.duration &&
+          curve == other.curve &&
+          delay == other.delay;
 }
 
 class _State extends State<OpacityAnimatedWidget>
@@ -59,13 +66,15 @@ class _State extends State<OpacityAnimatedWidget>
   @override
   void didUpdateWidget(OpacityAnimatedWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (listEquals(oldWidget.values, widget.values)) {
+    if (widget.isAnimationEqual(oldWidget)) {
       if (widget.enabled != oldWidget.enabled) {
         _updateAnimationState();
       }
     } else {
       _createAnimations();
-      _updateAnimationState();
+      if (widget.enabled != oldWidget.enabled) {
+        _updateAnimationState();
+      }
     }
   }
 
