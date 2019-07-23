@@ -39,6 +39,7 @@ RotationAnimatedWidget.tween(
 
 Don't hesitate to compose them
 
+```dart
 TranslationAnimatedWidget.tween(
     enabled: this.displayMyWidget,
     translationDisabled: Offset(0, 200),
@@ -51,6 +52,7 @@ TranslationAnimatedWidget.tween(
         child: /* your widget */
     ),
 ),
+```
 
 [![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/compose.gif)](https://www.github.com/florent37/AnimatedWidgets)
 

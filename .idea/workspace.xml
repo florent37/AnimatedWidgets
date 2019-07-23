@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="079d6184-9e42-45c8-9aff-25cae70e7925" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/compose/compose_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/medias/compose.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/compose/compose_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/compose.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/rotation/rotation_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/example/lib/rotation/rotation_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/opacity_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/opacity_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/rotation_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/rotation_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/scale_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/scale_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/shake_animated_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/shake_animated_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/size_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/size_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/translation_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/lib/widgets/translation_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/rotation/rotation_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/rotation/rotation_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/opacity_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/opacity_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/rotation_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/rotation_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/scale_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/scale_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/shake_animated_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/shake_animated_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/size_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/size_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/translation_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/translation_animated.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -56,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="54" column="92" selection-start-line="54" selection-start-column="92" selection-end-line="54" selection-end-column="92" />
+            <state relative-caret-position="256">
+              <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -280,7 +257,7 @@
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -293,9 +270,9 @@
       <window_info anchor="bottom" id="Run" order="1" weight="0.32894737" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32894737" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Logcat" order="4" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Logcat" order="4" weight="0.32894737" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.32894737" />
-      <window_info anchor="bottom" id="Terminal" order="6" weight="0.32894737" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="6" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
@@ -648,8 +625,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="54" column="92" selection-start-line="54" selection-start-column="92" selection-end-line="54" selection-end-column="92" />
+        <state relative-caret-position="256">
+          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
         </state>
       </provider>
     </entry>
