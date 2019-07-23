@@ -28,9 +28,14 @@ class FirstScreenView extends StatelessWidget {
                 return Stack(
                   fit: StackFit.expand,
                   children: [
-                    _buildInputButton(onClicked: () {
-                      bloc.onClicked();
-                    }),
+                    Positioned(
+                      bottom: 80,
+                      left: 0,
+                      right: 0,
+                      child: _buildInputButton(onClicked: () {
+                        bloc.onClicked();
+                      }),
+                    ),
                     Positioned(
                       bottom: 20,
                       left: 20,
@@ -45,6 +50,9 @@ class FirstScreenView extends StatelessWidget {
                           Offset(0, 0),
                         ],
                         child: RaisedButton(
+                          elevation: 12,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          color: Colors.white,
                           onPressed: () {
                             bloc.onDismissClicked();
                           },
@@ -62,21 +70,15 @@ class FirstScreenView extends StatelessWidget {
 
   Widget _buildInputButton({Function onClicked}) {
     return Center(
-      child: TapScaleAnimated(
-        scale: 0.3,
-        onTap: () {
-          onClicked();
-        },
-        child: Container(
-            alignment: Alignment.center,
-            height: 100,
-            width: 100,
-            color: Colors.blue,
-            child: Text(
-              "animate",
-              style: TextStyle(color: Colors.white),
-            )),
-      ),
+      child: RaisedButton(
+          onPressed: (){
+            onClicked();
+          },
+          color: Colors.blue,
+          child: Text(
+            "animate",
+            style: TextStyle(color: Colors.white),
+          )),
     );
   }
 }

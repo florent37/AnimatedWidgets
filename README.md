@@ -17,15 +17,33 @@ TranslationAnimatedWidget(
 ),
 ```
 
+[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/translation.gif)](https://www.github.com/florent37/AnimatedWidgets)
+
+
+or using a tween constructor
+
+```dart
+RotationAnimatedWidget.tween(
+    enabled: enabled,
+    rotationDisabled: Rotation.degrees(z: 0),
+    rotationEnabled: Rotation.degrees(z: 90),
+    child: /* your widget */
+),
+```
+
+[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/rotation.gif)](https://www.github.com/florent37/AnimatedWidgets)
+
 # Opacity
 
-Example with a Stateful Widget
+[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/opacity.gif)](https://www.github.com/florent37/AnimatedWidgets)
+
+Example using a Stateful Widget
 
 ```
 class _StatefulScreenState extends State<StatefulScreen> {
 
   // will determine if the opacity animation is launched
-  bool _displayImage = false;
+  bool _display = false;
 
   @override
   Widget build(BuildContext context) {
@@ -42,21 +60,27 @@ class _StatefulScreenState extends State<StatefulScreen> {
           OpacityAnimatedWidget.tween(
             opacityEnabled: 1, //define start value
             opacityDisabled: 0, //and end value
-            enabled: _displayImage, //bind with the boolean
-            child: Image.network("https://placekitten.com/g/300/300"),
+            enabled: _display, //bind with the boolean
+            child: Container(
+               height: 200,
+               width: 200,
+               child: FlutterLogo(
+                 style: FlutterLogoStyle.stacked,
+               ),
+            ),
           ),
 
           RaisedButton(
             color: Colors.blue,
             child: Text(
-              "show this",
+              _display ? "hide logo" : "display logo",
               style: TextStyle(color: Colors.white),
             ),
             onPressed: () {
               setState(() {
 
                 //will fire the animation
-                _displayImage = !_displayImage;
+                _display = !_display;
 
               });
             },
@@ -70,16 +94,14 @@ class _StatefulScreenState extends State<StatefulScreen> {
 
 # Translation
 
-Example with bloc pattern
+[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/translation.gif)](https://www.github.com/florent37/AnimatedWidgets)
+
+Example using bloc pattern
 
 ```
 class FirstScreenBloc extends Bloc {
   final _viewState = BehaviorSubject<FirstScreenViewState>.seeded(FirstScreenViewState());
   Observable<FirstScreenViewState> get viewState => _viewState;
-
-  FirstScreenBloc() {
-    _viewState.add(FirstScreenViewState(buttonVisible: false));
-  }
 
   void onClicked() {
     _viewState.add(FirstScreenViewState(buttonVisible: true));
@@ -113,7 +135,9 @@ class FirstScreenView extends StatelessWidget {
     return StreamBuilder<FirstScreenViewState>(
             stream: bloc.viewState,
             builder: (context, snapshot) {
+
                 final viewState = snapshot.data;
+
                 return Stack(
                   fit: StackFit.expand,
                   children: [
@@ -124,8 +148,9 @@ class FirstScreenView extends StatelessWidget {
                       bottom: 20,
                       left: 20,
                       right: 20,
+
                       child: TranslationAnimatedWidget(
-                        enabled: viewState.buttonVisible,
+                        enabled: viewState.buttonVisible, //will forward/reverse the animation
                         curve: Curves.easeIn,
                         duration: Duration(seconds: 1),
                         values: [
@@ -139,6 +164,7 @@ class FirstScreenView extends StatelessWidget {
                           },
                           child: Text("Dismiss"),
                         ),
+
                       ),
                     ),
                   ],
@@ -151,53 +177,35 @@ class FirstScreenView extends StatelessWidget {
 
 # Rotation
 
+[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/rotation.gif)](https://www.github.com/florent37/AnimatedWidgets)
+
+```dart
+RotationAnimatedWidget.tween(
+    enabled: enabled,
+    rotationDisabled: Rotation.deg(),
+    rotationEnabled: Rotation.deg(z: 90, x: 80),
+    child: /* your widget */
+),
+
+RotationAnimatedWidget.tween(
+    enabled: enabled,
+    rotation: Rotation.deg(),
+    rotationEnabled: Rotation.deg(z: 90, x: 80),
+    child: /* your widget */
+),
+```
+
 # Scale
+
+[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/scale.gif)](https://www.github.com/florent37/AnimatedWidgets)
 
 # Size
 
+[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/size.gif)](https://www.github.com/florent37/AnimatedWidgets)
+
 # Custom Animated
 
-
-
-```dart
-class _MyScreenState extends State<MyScreen> {
-
-  bool enabled = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      fit: StackFit.expand,
-      children: <Widget>[
-        Center(
-          child: TapScaleAnimated(
-            scale: 0.3,
-            onTap: () {
-              setState(() {
-                enabled = !enabled;
-              });
-            },
-            child: Container(height:100, width: 100, color: Colors.blue, child: Text("animate")),
-          ),
-        ),
-        Positioned(
-          bottom: 20,
-          left: 20,
-          right: 20,
-          child: TranslationAnimatedWidget(
-            enabled: enabled,
-            values: [Offset(0, 200), Offset(0, 0)],
-            child: RaisedButton(
-              onPressed: () {},
-              child: Text("Dismiss"),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-```
+[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/custom.gif)](https://www.github.com/florent37/AnimatedWidgets)
 
 ## Getting Started with Flutter
 

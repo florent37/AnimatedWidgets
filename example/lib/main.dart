@@ -1,4 +1,5 @@
 import 'package:animated_widgets_example/bloc/first_screen.dart';
+import 'package:animated_widgets_example/rotation/rotation_screen.dart';
 import 'package:animated_widgets_example/statefull/statefull_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +31,12 @@ class _MyAppState extends State<MyApp> {
             title: Text("Stateless"),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => StatefulScreen()));
+            },
+          ),
+          ListTile(
+            title: Text("Rotation"),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => RotationScreen()));
             },
           )
         ],

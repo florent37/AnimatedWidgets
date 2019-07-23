@@ -1,13 +1,13 @@
 import 'package:animated_widgets/animated_widgets.dart';
 import 'package:flutter/material.dart';
 
-class StatefulScreen extends StatefulWidget {
+class RotationScreen extends StatefulWidget {
   @override
-  _StatefulScreenState createState() => _StatefulScreenState();
+  _RotationScreenState createState() => _RotationScreenState();
 }
 
-class _StatefulScreenState extends State<StatefulScreen> {
-  bool _display = false;
+class _RotationScreenState extends State<RotationScreen> {
+  bool _enabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +15,13 @@ class _StatefulScreenState extends State<StatefulScreen> {
       appBar: AppBar(),
       body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            OpacityAnimatedWidget.tween(
-              opacityEnabled: 1,
-              opacityDisabled: 0,
-              curve: Curves.easeIn,
-              duration: Duration(milliseconds: 900),
-              enabled: _display,
+            RotationAnimatedWidget(
+              values: [Rotation.deg(), Rotation.deg(z: 90, x: 80)],
+              enabled: _enabled,
               child: Container(
                 height: 200,
                 width: 200,
@@ -36,12 +33,12 @@ class _StatefulScreenState extends State<StatefulScreen> {
             RaisedButton(
               color: Colors.blue,
               child: Text(
-                _display ? "hide logo" : "display logo",
+                "rotate",
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () {
                 setState(() {
-                  _display = !_display;
+                  _enabled = !_enabled;
                 });
               },
             )
