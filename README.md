@@ -77,8 +77,7 @@ class _StatefulScreenState extends State<StatefulScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-
+        children: [
 
           //wrap your widget with OpacityAnimatedWidget
           OpacityAnimatedWidget.tween(

@@ -22,7 +22,10 @@ class ShakeAnimatedWidget extends StatefulWidget {
   createState() => _State();
 
   //except the boolean `enabled`
-  bool isAnimationEqual(ShakeAnimatedWidget other) => shakeAngle == other.shakeAngle && duration == other.duration && curve == other.curve;
+  bool isAnimationEqual(ShakeAnimatedWidget other) =>
+      shakeAngle == other.shakeAngle &&
+      duration == other.duration &&
+      curve == other.curve;
 }
 
 class _State extends State<ShakeAnimatedWidget> with TickerProviderStateMixin {
@@ -55,31 +58,38 @@ class _State extends State<ShakeAnimatedWidget> with TickerProviderStateMixin {
   void _createAnimations() {
     _animationController?.stop();
     _animationController?.dispose();
-    _animationController = AnimationController(duration: widget.duration, vsync: this)
-      ..addStatusListener((status) {
-        //restart
-        if (status == AnimationStatus.completed) {
-          _animationController.forward();
-        }
-      });
+    _animationController =
+        AnimationController(duration: widget.duration, vsync: this)
+          ..addStatusListener((status) {
+            //restart
+            if (status == AnimationStatus.completed) {
+              _animationController.forward();
+            }
+          });
 
-    _rotationXAnim = chainTweens([0.0, widget.shakeAngle.x, 0.0, -widget.shakeAngle.x, 0.0]).animate(
+    _rotationXAnim =
+        chainTweens([0.0, widget.shakeAngle.x, 0.0, -widget.shakeAngle.x, 0.0])
+            .animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
     )..addListener(() {
-        setState(() {});
-      });
+                setState(() {});
+              });
 
-    _rotationYAnim = chainTweens([0.0, widget.shakeAngle.y, 0.0, -widget.shakeAngle.y, 0.0]).animate(
+    _rotationYAnim =
+        chainTweens([0.0, widget.shakeAngle.y, 0.0, -widget.shakeAngle.y, 0.0])
+            .animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
     )..addListener(() {
-        setState(() {});
-      });
+                setState(() {});
+              });
 
-    _rotationZAnim = chainTweens([0.0, widget.shakeAngle.z, 0.0, -widget.shakeAngle.z, 0.0]).animate(
+    _rotationZAnim =
+        chainTweens([0.0, widget.shakeAngle.z, 0.0, -widget.shakeAngle.z, 0.0])
+            .animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
     )..addListener(() {
-        setState(() {});
-      });
+                setState(() {});
+              });
   }
 
   @override
