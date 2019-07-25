@@ -288,13 +288,10 @@ CustomAnimatedWidget(
       curve: Curves.easeOut,
       builder: (context, percent) { //for custom animation, use builders
         final int displayedDate = (2018 * percent).floor();
-        return Container(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            decoration: BoxDecoration(border: Border.all(color: Colors.blue)),
-            child: Text(
+        return Text(
               "current year : $displayedDate",
               style: TextStyle(color: Colors.blue),
-            ));
+        );
       },
 ),
 ```
