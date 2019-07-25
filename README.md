@@ -264,6 +264,22 @@ SizeAnimatedWidget(
 
 [![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/size.gif)](https://www.github.com/florent37/AnimatedWidgets)
 
+# Shake
+
+```dart
+ShakeAnimatedWidget(
+      enabled: this._enabled,
+      duration: Duration(milliseconds: 1500),
+      shakeAngle: Rotation.deg(z: 40),
+      curve: Curves.linear,
+      child: FlutterLogo(
+        style: FlutterLogoStyle.stacked,
+      ),
+    ),
+```
+
+[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/custom.gif)](https://www.github.com/florent37/AnimatedWidgets)
+
 # Custom Animated
 
 ```dart

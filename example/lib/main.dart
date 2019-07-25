@@ -1,6 +1,7 @@
 import 'package:animated_widgets_example/bloc/first_screen.dart';
 import 'package:animated_widgets_example/rotation/rotation_screen.dart';
 import 'package:animated_widgets_example/scale/scale_screen.dart';
+import 'package:animated_widgets_example/shake/shake_screen.dart';
 import 'package:animated_widgets_example/size/size_screen.dart';
 import 'package:animated_widgets_example/statefull/statefull_screen.dart';
 import 'package:flutter/material.dart';
@@ -66,6 +67,12 @@ class _MyAppState extends State<MyApp> {
             title: Text("Custom"),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomScreen()));
+            },
+          ),
+          ListTile(
+            title: Text("Shake"),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ShakeScreen()));
             },
           )
         ],

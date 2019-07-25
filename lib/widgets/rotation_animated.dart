@@ -108,8 +108,6 @@ class _State extends State<RotationAnimatedWidget>
     if (widget.enabled ?? false) {
       await Future.delayed(widget.delay);
       _animationController.forward();
-    } else {
-      _animationController.reverse();
     }
   }
 

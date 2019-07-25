@@ -24,9 +24,9 @@ class CustomAnimatedWidget extends StatefulWidget {
 
   //except the boolean `enabled`
   bool isAnimationEqual(CustomAnimatedWidget other) =>
-          duration == other.duration &&
-          curve == other.curve &&
-          delay == other.delay;
+      duration == other.duration &&
+      curve == other.curve &&
+      delay == other.delay;
 }
 
 class _CustomAnimatedWidget extends State<CustomAnimatedWidget>
