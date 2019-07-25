@@ -278,7 +278,7 @@ ShakeAnimatedWidget(
     ),
 ```
 
-[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/custom.gif)](https://www.github.com/florent37/AnimatedWidgets)
+[![screen](https://raw.githubusercontent.com/florent37/AnimatedWidgets/master/medias/shake.gif)](https://www.github.com/florent37/AnimatedWidgets)
 
 # Custom Animated
 
