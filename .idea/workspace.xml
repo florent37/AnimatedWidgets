@@ -7,13 +7,7 @@
     <list default="true" id="079d6184-9e42-45c8-9aff-25cae70e7925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/animated_widgets/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/custom_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/custom_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/opacity_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/opacity_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/rotation_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/rotation_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/scale_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/scale_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/shake_animated_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/shake_animated_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/size_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/size_animated.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/translation_animated.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/translation_animated.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -54,6 +48,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="288" column="48" lean-forward="true" selection-start-line="288" selection-start-column="48" selection-end-line="288" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/widgets/opacity_animated.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="410">
@@ -66,12 +78,12 @@
         <entry file="file://$PROJECT_DIR$/lib/widgets/size_animated.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="64">
-              <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/widgets/shake_animated_widget.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -148,7 +160,6 @@
         <option value="$PROJECT_DIR$/example/lib/shake/size_screen.dart" />
         <option value="$PROJECT_DIR$/example/lib/main.dart" />
         <option value="$PROJECT_DIR$/example/lib/shake/shake_screen.dart" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/widgets/scale_animated.dart" />
         <option value="$PROJECT_DIR$/lib/widgets/rotation_animated.dart" />
@@ -157,6 +168,7 @@
         <option value="$PROJECT_DIR$/lib/widgets/size_animated.dart" />
         <option value="$PROJECT_DIR$/lib/widgets/translation_animated.dart" />
         <option value="$PROJECT_DIR$/lib/widgets/shake_animated_widget.dart" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
       </list>
     </option>
   </component>
@@ -546,24 +558,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../flutter-sdk/packages/flutter/lib/src/animation/animation_controller.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10425">
           <caret line="709" column="7" selection-start-line="709" selection-start-column="7" selection-end-line="709" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="288" column="48" lean-forward="true" selection-start-line="288" selection-start-column="48" selection-end-line="288" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -626,13 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/widgets/size_animated.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/widgets/translation_animated.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -653,10 +644,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/widgets/size_animated.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/widgets/shake_animated_widget.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="288" column="48" lean-forward="true" selection-start-line="288" selection-start-column="48" selection-end-line="288" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
         </state>
       </provider>
     </entry>

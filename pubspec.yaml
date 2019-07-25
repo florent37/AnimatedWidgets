@@ -1,6 +1,6 @@
 name: animated_widgets
 description: Easily add animations on your screen with AnimatedWidgets. Add always your animated widgets in your component's tree, then activate them when you want to activate the animations.
-version: 1.0.0+2
+version: 1.0.1
 author: Florent Champigny <champigny.florent@gmail.com>
 homepage: https://github.com/florent37/AnimatedWidgets
 
