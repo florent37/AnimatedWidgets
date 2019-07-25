@@ -10,6 +10,18 @@ class ScaleAnimatedWidget extends StatefulWidget {
   final Curve curve;
   final Duration delay;
 
+  /// A scale animation using 2-* values
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// values : list of double used for the animation,
+  ///   - the first : will be the scaleDisabled value
+  ///   - intermediate values : intermediate values between scaleDisabled & scaleEnabled
+  ///   - the last : will be the scaleEnabled value
+  ///
+  /// animationFinished : a callback called when the animation is finished
   ScaleAnimatedWidget({
     this.child,
     this.delay = const Duration(),
@@ -20,6 +32,17 @@ class ScaleAnimatedWidget extends StatefulWidget {
   })  : this._values = values,
         assert(values.length > 1);
 
+  /// An scale animation using 2 values : enabled - disabled
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// delay : the delay before the animation starts
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// scaleDisabled : the default value of the widget
+  /// scaleEnabled : the animated value of the widget
+  ///
+  /// animationFinished : a callback called when the animation is finished
   ScaleAnimatedWidget.tween({
     Duration duration = const Duration(milliseconds: 500),
     double scaleEnabled = 1,

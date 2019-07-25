@@ -11,22 +11,22 @@ class TranslationAnimatedWidget extends StatefulWidget {
   final Widget child;
   final Function(bool) animationFinished;
 
-  TranslationAnimatedWidget({
-    this.duration = const Duration(milliseconds: 500),
-    this.delay = const Duration(),
-    List<Offset> values = const [const Offset(0, 0), const Offset(0, 200)],
-    this.enabled = true,
-    this.curve = Curves.linear,
-    this.animationFinished,
-    @required this.child,
-  })  : this._values = values,
-        assert(values.length > 1);
-
+  /// An translation animation using 2 values : enabled - disabled
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// delay : the delay before the animation starts
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// translationDisabled : the default value of the widget
+  /// translationEnabled : the animated value of the widget
+  ///
+  /// animationFinished : a callback called when the animation is finished
   TranslationAnimatedWidget.tween({
     Duration duration = const Duration(milliseconds: 500),
     Duration delay = const Duration(),
-    Offset translationEnabled = const Offset(0, 0),
     Offset translationDisabled = const Offset(0, 200),
+    Offset translationEnabled = const Offset(0, 0),
     bool enabled = true,
     Function(bool) animationFinished,
     Curve curve = Curves.linear,
@@ -40,6 +40,31 @@ class TranslationAnimatedWidget extends StatefulWidget {
           animationFinished: animationFinished,
           values: [translationDisabled, translationEnabled],
         );
+
+
+  /// An translation animation using 2-* values
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// delay : the delay before the animation starts
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// values : list of [Offset] used for the animation,
+  ///   - the first : will be the translationDisabled value
+  ///   - intermediate values : intermediate values between translationDisabled & translationEnabled
+  ///   - the last : will be the translationEnabled value
+  ///
+  /// animationFinished : a callback called when the animation is finished
+  TranslationAnimatedWidget({
+    this.duration = const Duration(milliseconds: 500),
+    this.delay = const Duration(),
+    List<Offset> values = const [const Offset(0, 0), const Offset(0, 200)],
+    this.enabled = true,
+    this.curve = Curves.linear,
+    this.animationFinished,
+    @required this.child,
+  })  : this._values = values,
+        assert(values.length > 1);
 
   List<Offset> get values => _values;
 

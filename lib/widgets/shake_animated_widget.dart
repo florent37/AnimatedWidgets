@@ -10,6 +10,17 @@ class ShakeAnimatedWidget extends StatefulWidget {
   final Widget child;
   final Curve curve;
 
+
+  /// A shake animation
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// shakeAngle : oscilate between 0, -shakeAngle, 0, shakeAngle, 0
+  ///   - can be in radians or degrees (see [Rotation])
+  ///
+  /// animationFinished : a callback called when the animation is finished
   ShakeAnimatedWidget({
     this.duration = const Duration(milliseconds: 2000),
     this.shakeAngle = const Rotation.radians(z: 0.015),

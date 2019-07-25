@@ -11,6 +11,19 @@ class OpacityAnimatedWidget extends StatefulWidget {
   final Duration delay;
   final Function(bool) animationFinished;
 
+  /// An opacity animation using 2-* values
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// delay : the delay before the animation starts
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// values : list of double (between 1.0 and 0.0) used for the animation,
+  ///   - the first : will be the opacityDisabled value
+  ///   - intermediate values : intermediate values between opacityDisabled & opacityEnabled
+  ///   - the last : will be the opacityEnabled value
+  ///
+  /// animationFinished : a callback called when the animation is finished
   OpacityAnimatedWidget({
     this.child,
     this.delay = const Duration(),
@@ -22,6 +35,17 @@ class OpacityAnimatedWidget extends StatefulWidget {
   })  : this._values = values,
         assert(values.length > 1);
 
+  /// An opacity animation using 2 values : enabled - disabled
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// delay : the delay before the animation starts
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// opacityDisabled : the default value of the widget (between 1.0 and 0.0)
+  /// opacityEnabled : the animated value of the widget (between 1.0 and 0.0)
+  ///
+  /// animationFinished : a callback called when the animation is finished
   OpacityAnimatedWidget.tween({
     Duration duration = const Duration(milliseconds: 500),
     double opacityEnabled = 1,

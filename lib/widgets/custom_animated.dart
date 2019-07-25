@@ -10,6 +10,16 @@ class CustomAnimatedWidget extends StatefulWidget {
   final Curve curve;
   final Function(bool) animationFinished;
 
+  /// A custom animation using a builder
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// delay : the delay before the animation starts
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// builder : called at each tick to provide the animated widget, giving the actual percentage (0.0 - 1.0)
+  ///
+  /// animationFinished : a callback called when the animation is finished
   CustomAnimatedWidget({
     this.duration = const Duration(milliseconds: 500),
     @required this.builder,

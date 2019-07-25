@@ -11,6 +11,19 @@ class SizeAnimatedWidget extends StatefulWidget {
   final Duration delay;
   final Function(bool) animationFinished;
 
+  /// A size animation using 2-* values
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// delay : the delay before the animation starts
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// values : list of double (between 1.0 and 0.0) used for the animation,
+  ///   - the first : will be the sizeDisabled value
+  ///   - intermediate values : intermediate values between sizeDisabled & sizeEnabled
+  ///   - the last : will be the sizeEnabled value
+  ///
+  /// animationFinished : a callback called when the animation is finished
   SizeAnimatedWidget({
     this.child,
     this.delay = const Duration(),
@@ -22,6 +35,17 @@ class SizeAnimatedWidget extends StatefulWidget {
   })  : this._values = values,
         assert(values.length > 1);
 
+  /// An size animation using 2 values : enabled - disabled
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// delay : the delay before the animation starts
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// sizeDisabled : the default value of the widget
+  /// sizeEnabled : the animated value of the widget
+  ///
+  /// animationFinished : a callback called when the animation is finished
   SizeAnimatedWidget.tween({
     Duration duration = const Duration(milliseconds: 500),
     Duration delay = const Duration(milliseconds: 500),

@@ -37,6 +37,23 @@ class RotationAnimatedWidget extends StatefulWidget {
   final Curve curve;
   final Function(bool) animationFinished;
 
+  /// An rotation animation using 2-* values : enabled - disabled
+  ///
+  /// Rotations can be
+  /// - in in radians or degrees
+  /// - in axis X, Y, Z
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// delay : the delay before the animation starts
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// values : list of [Rotation] (degrees or rad) used for the animation,
+  ///   - the first : will be the rotationDisabled value
+  ///   - intermediate values : intermediate values between rotationDisabled & rotationEnabled
+  ///   - the last : will be the rotationEnabled value
+  ///
+  /// animationFinished : a callback called when the animation is finished
   RotationAnimatedWidget({
     this.duration = const Duration(milliseconds: 500),
     List<Rotation> values = const [
@@ -51,6 +68,22 @@ class RotationAnimatedWidget extends StatefulWidget {
   })  : this._values = values,
         assert(values.length > 1);
 
+
+  /// An rotation animation using 2 values : enabled - disabled
+  ///
+  /// Rotations can be
+  /// - in in radians or degrees
+  /// - in axis X, Y, Z
+  ///
+  /// duration : the duration of the animation, including intermediate values
+  /// delay : the delay before the animation starts
+  /// enabled : determine if the animation is stopped or fired
+  /// curve : An easing curve, see [Curve]
+  ///
+  /// rotationDisabled : the default value of the widget (see [Rotation])
+  /// rotationEnabled : the animated value of the widget (see [Rotation])
+  ///
+  /// animationFinished : a callback called when the animation is finished
   RotationAnimatedWidget.tween({
     Duration duration = const Duration(milliseconds: 500),
     Rotation rotationEnabled = const Rotation.radians(),
