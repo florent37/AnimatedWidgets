@@ -6,6 +6,7 @@ import 'package:animated_widgets_example/size/size_screen.dart';
 import 'package:animated_widgets_example/statefull/statefull_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'complete/complete_screen.dart';
 import 'compose/compose_screen.dart';
 import 'custom/custom_screen.dart';
 
@@ -73,6 +74,12 @@ class _MyAppState extends State<MyApp> {
             title: Text("Shake"),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => ShakeScreen()));
+            },
+          ),
+          ListTile(
+            title: Text("Complete"),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => CompleteScreen()));
             },
           )
         ],

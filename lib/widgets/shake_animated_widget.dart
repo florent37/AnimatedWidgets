@@ -10,7 +10,6 @@ class ShakeAnimatedWidget extends StatefulWidget {
   final Widget child;
   final Curve curve;
 
-
   /// A shake animation
   ///
   /// duration : the duration of the animation, including intermediate values

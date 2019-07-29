@@ -68,7 +68,6 @@ class RotationAnimatedWidget extends StatefulWidget {
   })  : this._values = values,
         assert(values.length > 1);
 
-
   /// An rotation animation using 2 values : enabled - disabled
   ///
   /// Rotations can be

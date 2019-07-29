@@ -41,7 +41,6 @@ class TranslationAnimatedWidget extends StatefulWidget {
           values: [translationDisabled, translationEnabled],
         );
 
-
   /// An translation animation using 2-* values
   ///
   /// duration : the duration of the animation, including intermediate values
