@@ -2,6 +2,6 @@
 
 * TODO: Describe initial release.
 
-## 1.0.2
+## 1.0.3
 
 * Removed platform specific code
