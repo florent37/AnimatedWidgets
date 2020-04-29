@@ -61,7 +61,7 @@ class _State extends State<ShakeAnimatedWidget> with TickerProviderStateMixin {
     if (widget.enabled ?? false) {
       _animationController.repeat();
     } else {
-      _animationController.stop();
+      _animationController.reset();
     }
   }
 
