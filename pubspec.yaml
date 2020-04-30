@@ -1,7 +1,9 @@
 name: animated_widgets
 description: Easily add animations on your screen with AnimatedWidgets. Add always your animated widgets in your component's tree, then activate them when you want to activate the animations.
 version: 1.0.4
-author: Florent Champigny <champigny.florent@gmail.com>
+authors: [
+  Florent Champigny <champigny.florent@gmail.com>
+]
 homepage: https://github.com/florent37/AnimatedWidgets
 
 environment:
@@ -10,6 +12,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  vector_math: ^2.0.8
 
 dev_dependencies:
   flutter_test:
