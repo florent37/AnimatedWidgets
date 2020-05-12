@@ -115,10 +115,10 @@ class _State extends State<ScaleAnimatedWidget> with TickerProviderStateMixin {
       vsync: this,
       duration: widget.duration,
     )..addStatusListener((status) {
-      if (widget.animationFinished != null) {
-        widget.animationFinished(widget.enabled);
-      }
-    });
+        if (widget.animationFinished != null) {
+          widget.animationFinished(widget.enabled);
+        }
+      });
 
     _animation = chainTweens(widget.values).animate(
       CurvedAnimation(parent: _animationController, curve: widget.curve),
