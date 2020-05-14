@@ -1,3 +1,7 @@
+## 1.0.6
+
+* fixed autostart for shake animation
+
 ## 1.0.5
 
 * fixed animationFinished on scale widget
