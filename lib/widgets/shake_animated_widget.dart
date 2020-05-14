@@ -105,6 +105,7 @@ class _State extends State<ShakeAnimatedWidget> with TickerProviderStateMixin {
   @override
   void initState() {
     _createAnimations();
+    _updateAnimationState();
     super.initState();
   }
 
