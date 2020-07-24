@@ -9,12 +9,14 @@ class ShakeAnimatedWidget extends StatefulWidget {
   final bool enabled;
   final Widget child;
   final Curve curve;
+  final Alignment alignment;
 
   /// A shake animation
   ///
   /// duration : the duration of the animation, including intermediate values
   /// enabled : determine if the animation is stopped or fired
   /// curve : An easing curve, see [Curve]
+  /// alignment : The center of the shake
   ///
   /// shakeAngle : oscilate between 0, -shakeAngle, 0, shakeAngle, 0
   ///   - can be in radians or degrees (see [Rotation])
@@ -25,6 +27,7 @@ class ShakeAnimatedWidget extends StatefulWidget {
     this.shakeAngle = const Rotation.radians(z: 0.015),
     this.curve = Curves.linear,
     this.enabled = true,
+    this.alignment = Alignment.center,
     @required this.child,
   });
 
@@ -112,7 +115,7 @@ class _State extends State<ShakeAnimatedWidget> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Transform(
-      alignment: Alignment.center,
+      alignment: widget.alignment,
       transform: Matrix4.identity()
         ..rotateX(_rotationXAnim.value)
         ..rotateY(_rotationYAnim.value)
