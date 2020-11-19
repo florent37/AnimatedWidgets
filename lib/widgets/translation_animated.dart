@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 class TranslationAnimatedWidget extends StatefulWidget {
   final List<Offset> _values;
   final Duration duration;
+  final Duration reverseDuration;
   final Duration delay;
   final bool enabled;
   final Curve curve;
+  final Curve reverseCurve;
   final Widget child;
   final Function(bool) animationFinished;
 
@@ -24,17 +26,21 @@ class TranslationAnimatedWidget extends StatefulWidget {
   /// animationFinished : a callback called when the animation is finished
   TranslationAnimatedWidget.tween({
     Duration duration = const Duration(milliseconds: 500),
+    Duration reverseDuration = const Duration(milliseconds: 500),
     Duration delay = const Duration(),
     Offset translationDisabled = const Offset(0, 200),
     Offset translationEnabled = const Offset(0, 0),
     bool enabled = true,
     Function(bool) animationFinished,
     Curve curve = Curves.linear,
+    Curve reverseCurve = Curves.linear,
     @required Widget child,
   }) : this(
           duration: duration,
+          reverseDuration: reverseDuration,
           enabled: enabled,
           curve: curve,
+          reverseCurve: reverseCurve,
           delay: delay,
           child: child,
           animationFinished: animationFinished,
@@ -56,10 +62,12 @@ class TranslationAnimatedWidget extends StatefulWidget {
   /// animationFinished : a callback called when the animation is finished
   TranslationAnimatedWidget({
     this.duration = const Duration(milliseconds: 500),
+    this.reverseDuration = const Duration(milliseconds: 500),
     this.delay = const Duration(),
     List<Offset> values = const [const Offset(0, 0), const Offset(0, 200)],
     this.enabled = true,
     this.curve = Curves.linear,
+    this.reverseCurve = Curves.linear,
     this.animationFinished,
     @required this.child,
   })  : this._values = values,
@@ -72,14 +80,10 @@ class TranslationAnimatedWidget extends StatefulWidget {
 
   //except the boolean `enabled`
   bool isAnimationEqual(TranslationAnimatedWidget other) =>
-      listEquals(values, other.values) &&
-      duration == other.duration &&
-      curve == other.curve &&
-      delay == other.delay;
+      listEquals(values, other.values) && duration == other.duration && curve == other.curve && delay == other.delay;
 }
 
-class _State extends State<TranslationAnimatedWidget>
-    with TickerProviderStateMixin {
+class _State extends State<TranslationAnimatedWidget> with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation<double> _translationXAnim;
   Animation<double> _translationYAnim;
@@ -112,6 +116,7 @@ class _State extends State<TranslationAnimatedWidget>
     _animationController?.dispose();
     _animationController = AnimationController(
       duration: widget.duration,
+      reverseDuration: widget.reverseDuration,
       vsync: this,
     )..addStatusListener((status) {
         if (widget.animationFinished != null) {
@@ -122,7 +127,11 @@ class _State extends State<TranslationAnimatedWidget>
     _translationXAnim = chainTweens(
       widget.values.map((it) => it.dx).toList(),
     ).animate(
-      CurvedAnimation(parent: _animationController, curve: widget.curve),
+      CurvedAnimation(
+        parent: _animationController,
+        curve: widget.curve,
+        reverseCurve: widget.reverseCurve,
+      ),
     )..addListener(() {
         setState(() {});
       });
@@ -130,7 +139,11 @@ class _State extends State<TranslationAnimatedWidget>
     _translationYAnim = chainTweens(
       widget.values.map((it) => it.dy).toList(),
     ).animate(
-      CurvedAnimation(parent: _animationController, curve: widget.curve),
+      CurvedAnimation(
+        parent: _animationController,
+        curve: widget.curve,
+        reverseCurve: widget.reverseCurve,
+      ),
     )..addListener(() {
         setState(() {});
       });
