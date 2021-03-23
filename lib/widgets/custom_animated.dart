@@ -8,7 +8,7 @@ class CustomAnimatedWidget extends StatefulWidget {
   final CustomBuilder builder;
   final bool enabled;
   final Curve curve;
-  final Function(bool) animationFinished;
+  final Function(bool)? animationFinished;
 
   /// A custom animation using a builder
   ///
@@ -22,7 +22,7 @@ class CustomAnimatedWidget extends StatefulWidget {
   /// animationFinished : a callback called when the animation is finished
   CustomAnimatedWidget({
     this.duration = const Duration(milliseconds: 500),
-    @required this.builder,
+    required this.builder,
     this.enabled = true,
     this.delay = const Duration(),
     this.animationFinished,
@@ -34,15 +34,12 @@ class CustomAnimatedWidget extends StatefulWidget {
 
   //except the boolean `enabled`
   bool isAnimationEqual(CustomAnimatedWidget other) =>
-      duration == other.duration &&
-      curve == other.curve &&
-      delay == other.delay;
+      duration == other.duration && curve == other.curve && delay == other.delay;
 }
 
-class _CustomAnimatedWidget extends State<CustomAnimatedWidget>
-    with TickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _customAnim;
+class _CustomAnimatedWidget extends State<CustomAnimatedWidget> with TickerProviderStateMixin {
+  AnimationController? _animationController;
+  late Animation<double> _customAnim;
 
   @override
   void didUpdateWidget(CustomAnimatedWidget oldWidget) {
@@ -60,26 +57,25 @@ class _CustomAnimatedWidget extends State<CustomAnimatedWidget>
   }
 
   void _updateAnimationState() async {
-    if (widget.enabled ?? false) {
+    if (widget.enabled) {
       await Future.delayed(widget.delay);
-      _animationController.forward();
+      _animationController!.forward();
     } else {
-      _animationController.reverse();
+      _animationController!.reverse();
     }
   }
 
   void _createAnimations() {
     _animationController?.dispose();
-    _animationController =
-        AnimationController(duration: widget.duration, vsync: this)
-          ..addStatusListener((status) {
-            if (widget.animationFinished != null) {
-              widget.animationFinished(widget.enabled);
-            }
-          });
+    _animationController = AnimationController(duration: widget.duration, vsync: this)
+      ..addStatusListener((status) {
+        if (widget.animationFinished != null) {
+          widget.animationFinished!(widget.enabled);
+        }
+      });
 
     _customAnim = Tween(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _animationController, curve: widget.curve),
+      CurvedAnimation(parent: _animationController!, curve: widget.curve),
     )..addListener(() {
         setState(() {});
       });
@@ -101,7 +97,7 @@ class _CustomAnimatedWidget extends State<CustomAnimatedWidget>
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController!.dispose();
     super.dispose();
   }
 }

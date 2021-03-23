@@ -3,13 +3,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ScaleAnimatedWidget extends StatefulWidget {
-  final Widget child;
+  final Widget? child;
   final List<double> _values;
   final bool enabled;
   final Duration duration;
   final Curve curve;
   final Duration delay;
-  final Function(bool) animationFinished;
+  final Function(bool)? animationFinished;
 
   /// A scale animation using 2-* values
   ///
@@ -50,9 +50,9 @@ class ScaleAnimatedWidget extends StatefulWidget {
     double scaleEnabled = 1,
     double scaleDisabled = 0,
     bool enabled = true,
-    Function(bool) animationFinished,
+    Function(bool)? animationFinished,
     Curve curve = Curves.linear,
-    @required Widget child,
+    required Widget child,
   }) : this(
             duration: duration,
             enabled: enabled,
@@ -75,8 +75,8 @@ class ScaleAnimatedWidget extends StatefulWidget {
 }
 
 class _State extends State<ScaleAnimatedWidget> with TickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _animation;
+  AnimationController? _animationController;
+  late Animation<double> _animation;
 
   @override
   void initState() {
@@ -101,11 +101,11 @@ class _State extends State<ScaleAnimatedWidget> with TickerProviderStateMixin {
   }
 
   void _updateAnimationState() async {
-    if (widget.enabled ?? false) {
+    if (widget.enabled) {
       await Future.delayed(widget.delay);
-      _animationController.forward();
+      _animationController!.forward();
     } else {
-      _animationController.reverse();
+      _animationController!.reverse();
     }
   }
 
@@ -116,20 +116,21 @@ class _State extends State<ScaleAnimatedWidget> with TickerProviderStateMixin {
       duration: widget.duration,
     )..addStatusListener((status) {
         if (widget.animationFinished != null) {
-          widget.animationFinished(widget.enabled);
+          widget.animationFinished!(widget.enabled);
         }
       });
 
     _animation = chainTweens(widget.values).animate(
-      CurvedAnimation(parent: _animationController, curve: widget.curve),
-    )..addListener(() {
+      CurvedAnimation(parent: _animationController!, curve: widget.curve),
+    ) as Animation<double>
+      ..addListener(() {
         setState(() {});
       });
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController!.dispose();
     super.dispose();
   }
 

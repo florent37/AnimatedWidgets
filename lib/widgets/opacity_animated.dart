@@ -3,13 +3,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class OpacityAnimatedWidget extends StatefulWidget {
-  final Widget child;
+  final Widget? child;
   final List<double> _values;
   final bool enabled;
   final Duration duration;
   final Curve curve;
   final Duration delay;
-  final Function(bool) animationFinished;
+  final Function(bool)? animationFinished;
 
   /// An opacity animation using 2-* values
   ///
@@ -51,9 +51,9 @@ class OpacityAnimatedWidget extends StatefulWidget {
     double opacityEnabled = 1,
     double opacityDisabled = 0,
     bool enabled = true,
-    Function(bool) animationFinished,
+    Function(bool)? animationFinished,
     Curve curve = Curves.linear,
-    @required Widget child,
+    required Widget child,
   }) : this(
             duration: duration,
             enabled: enabled,
@@ -75,10 +75,9 @@ class OpacityAnimatedWidget extends StatefulWidget {
       delay == other.delay;
 }
 
-class _State extends State<OpacityAnimatedWidget>
-    with TickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _animation;
+class _State extends State<OpacityAnimatedWidget> with TickerProviderStateMixin {
+  AnimationController? _animationController;
+  late Animation<double> _animation;
 
   @override
   void initState() {
@@ -103,11 +102,11 @@ class _State extends State<OpacityAnimatedWidget>
   }
 
   void _updateAnimationState() async {
-    if (widget.enabled ?? false) {
+    if (widget.enabled) {
       await Future.delayed(widget.delay);
-      _animationController.forward();
+      _animationController!.forward();
     } else {
-      _animationController.reverse();
+      _animationController!.reverse();
     }
   }
 
@@ -119,21 +118,22 @@ class _State extends State<OpacityAnimatedWidget>
     )..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           if (widget.animationFinished != null) {
-            widget.animationFinished(widget.enabled);
+            widget.animationFinished!(widget.enabled);
           }
         }
       });
 
     _animation = chainTweens(widget.values).animate(
-      CurvedAnimation(parent: _animationController, curve: widget.curve),
-    )..addListener(() {
+      CurvedAnimation(parent: _animationController!, curve: widget.curve),
+    ) as Animation<double>
+      ..addListener(() {
         setState(() {});
       });
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController!.dispose();
     super.dispose();
   }
 
