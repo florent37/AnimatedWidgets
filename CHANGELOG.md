@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Null Safety
+
 ## 1.0.6
 
 * fixed autostart for shake animation
