@@ -3,13 +3,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class SizeAnimatedWidget extends StatefulWidget {
-  final Widget child;
+  final Widget? child;
   final List<Size> _values;
   final bool enabled;
   final Duration duration;
   final Curve curve;
   final Duration delay;
-  final Function(bool) animationFinished;
+  final Function(bool)? animationFinished;
 
   /// A size animation using 2-* values
   ///
@@ -52,9 +52,9 @@ class SizeAnimatedWidget extends StatefulWidget {
     Size sizeEnabled = const Size(100, 100),
     Size sizeDisabled = const Size(0, 0),
     bool enabled = true,
-    Function(bool) animationFinished,
+    Function(bool)? animationFinished,
     Curve curve = Curves.linear,
-    @required Widget child,
+    required Widget child,
   }) : this(
           duration: duration,
           enabled: enabled,
@@ -79,9 +79,9 @@ class SizeAnimatedWidget extends StatefulWidget {
 }
 
 class _State extends State<SizeAnimatedWidget> with TickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _animationWidth;
-  Animation<double> _animationHeight;
+  AnimationController? _animationController;
+  late Animation<double> _animationWidth;
+  late Animation<double> _animationHeight;
 
   @override
   void initState() {
@@ -106,11 +106,11 @@ class _State extends State<SizeAnimatedWidget> with TickerProviderStateMixin {
   }
 
   void _updateAnimationState() async {
-    if (widget.enabled ?? false) {
+    if (widget.enabled) {
       await Future.delayed(widget.delay);
-      _animationController.forward();
+      _animationController!.forward();
     } else {
-      _animationController.reverse();
+      _animationController!.reverse();
     }
   }
 
@@ -122,29 +122,29 @@ class _State extends State<SizeAnimatedWidget> with TickerProviderStateMixin {
     )..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           if (widget.animationFinished != null) {
-            widget.animationFinished(widget.enabled);
+            widget.animationFinished!(widget.enabled);
           }
         }
       });
 
-    _animationWidth =
-        chainTweens(widget.values.map((it) => it.width).toList()).animate(
-      CurvedAnimation(parent: _animationController, curve: widget.curve),
-    )..addListener(() {
-            setState(() {});
-          });
+    _animationWidth = chainTweens(widget.values.map((it) => it.width).toList()).animate(
+      CurvedAnimation(parent: _animationController!, curve: widget.curve),
+    ) as Animation<double>
+      ..addListener(() {
+        setState(() {});
+      });
 
-    _animationHeight =
-        chainTweens(widget.values.map((it) => it.height).toList()).animate(
-      CurvedAnimation(parent: _animationController, curve: widget.curve),
-    )..addListener(() {
-            setState(() {});
-          });
+    _animationHeight = chainTweens(widget.values.map((it) => it.height).toList()).animate(
+      CurvedAnimation(parent: _animationController!, curve: widget.curve),
+    ) as Animation<double>
+      ..addListener(() {
+        setState(() {});
+      });
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController!.dispose();
     super.dispose();
   }
 

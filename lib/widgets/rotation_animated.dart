@@ -35,7 +35,7 @@ class RotationAnimatedWidget extends StatefulWidget {
   final bool enabled;
   final Widget child;
   final Curve curve;
-  final Function(bool) animationFinished;
+  final Function(bool)? animationFinished;
 
   /// An rotation animation using 2-* values : enabled - disabled
   ///
@@ -56,16 +56,13 @@ class RotationAnimatedWidget extends StatefulWidget {
   /// animationFinished : a callback called when the animation is finished
   RotationAnimatedWidget({
     this.duration = const Duration(milliseconds: 500),
-    List<Rotation> values = const [
-      const Rotation.radians(),
-      const Rotation.radians(x: pi)
-    ],
+    List<Rotation> values = const [Rotation.radians(), Rotation.radians(x: pi)],
     this.enabled = true,
     this.delay = const Duration(),
     this.animationFinished,
     this.curve = Curves.linear,
-    @required this.child,
-  })  : this._values = values,
+    required this.child,
+  })   : this._values = values,
         assert(values.length > 1);
 
   /// An rotation animation using 2 values : enabled - disabled
@@ -89,9 +86,9 @@ class RotationAnimatedWidget extends StatefulWidget {
     Rotation rotationDisabled = const Rotation.radians(x: pi),
     bool enabled = true,
     Duration delay = const Duration(),
-    Function(bool) animationFinished,
+    Function(bool)? animationFinished,
     Curve curve = Curves.linear,
-    @required Widget child,
+    required Widget child,
   }) : this(
             duration: duration,
             enabled: enabled,
@@ -114,12 +111,11 @@ class RotationAnimatedWidget extends StatefulWidget {
       delay == other.delay;
 }
 
-class _State extends State<RotationAnimatedWidget>
-    with TickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _rotationXAnim;
-  Animation<double> _rotationYAnim;
-  Animation<double> _rotationZAnim;
+class _State extends State<RotationAnimatedWidget> with TickerProviderStateMixin {
+  AnimationController? _animationController;
+  late Animation<double> _rotationXAnim;
+  late Animation<double> _rotationYAnim;
+  late Animation<double> _rotationZAnim;
 
   @override
   void didUpdateWidget(RotationAnimatedWidget oldWidget) {
@@ -137,42 +133,41 @@ class _State extends State<RotationAnimatedWidget>
   }
 
   void _updateAnimationState() async {
-    if (widget.enabled ?? false) {
+    if (widget.enabled) {
       await Future.delayed(widget.delay);
-      _animationController.forward();
+      _animationController!.forward();
     }
   }
 
   void _createAnimations() {
     _animationController?.dispose();
-    _animationController =
-        AnimationController(duration: widget.duration, vsync: this)
-          ..addStatusListener((status) {
-            if (widget.animationFinished != null) {
-              widget.animationFinished(widget.enabled);
-            }
-          });
+    _animationController = AnimationController(duration: widget.duration, vsync: this)
+      ..addStatusListener((status) {
+        if (widget.animationFinished != null) {
+          widget.animationFinished!(widget.enabled);
+        }
+      });
 
-    _rotationXAnim =
-        chainTweens(widget._values.map((it) => it.x).toList()).animate(
-      CurvedAnimation(parent: _animationController, curve: widget.curve),
-    )..addListener(() {
-            setState(() {});
-          });
+    _rotationXAnim = chainTweens(widget._values.map((it) => it.x).toList()).animate(
+      CurvedAnimation(parent: _animationController!, curve: widget.curve),
+    ) as Animation<double>
+      ..addListener(() {
+        setState(() {});
+      });
 
-    _rotationYAnim =
-        chainTweens(widget._values.map((it) => it.y).toList()).animate(
-      CurvedAnimation(parent: _animationController, curve: widget.curve),
-    )..addListener(() {
-            setState(() {});
-          });
+    _rotationYAnim = chainTweens(widget._values.map((it) => it.y).toList()).animate(
+      CurvedAnimation(parent: _animationController!, curve: widget.curve),
+    ) as Animation<double>
+      ..addListener(() {
+        setState(() {});
+      });
 
-    _rotationZAnim =
-        chainTweens(widget._values.map((it) => it.z).toList()).animate(
-      CurvedAnimation(parent: _animationController, curve: widget.curve),
-    )..addListener(() {
-            setState(() {});
-          });
+    _rotationZAnim = chainTweens(widget._values.map((it) => it.z).toList()).animate(
+      CurvedAnimation(parent: _animationController!, curve: widget.curve),
+    ) as Animation<double>
+      ..addListener(() {
+        setState(() {});
+      });
     _updateAnimationState();
   }
 
@@ -196,7 +191,7 @@ class _State extends State<RotationAnimatedWidget>
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController!.dispose();
     super.dispose();
   }
 }

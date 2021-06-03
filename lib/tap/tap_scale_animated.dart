@@ -2,7 +2,7 @@ import 'package:animated_widgets/core/chain_tweens.dart';
 import 'package:flutter/material.dart';
 
 class TapScaleAnimated extends StatefulWidget {
-  final Widget child;
+  final Widget? child;
   final Function onTap;
   final double scale;
   final Curve curve;
@@ -11,7 +11,7 @@ class TapScaleAnimated extends StatefulWidget {
 
   TapScaleAnimated(
       {this.child,
-      @required this.onTap,
+      required this.onTap,
       this.scale = 0.9,
       this.behavior = HitTestBehavior.deferToChild,
       this.duration = const Duration(milliseconds: 240),
@@ -23,8 +23,8 @@ class TapScaleAnimated extends StatefulWidget {
 
 class _State extends State<TapScaleAnimated>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _animation;
+  AnimationController? _animationController;
+  late Animation<double> _animation;
 
   @override
   void initState() {
@@ -40,15 +40,15 @@ class _State extends State<TapScaleAnimated>
     );
 
     _animation = chainTweens([1.0, widget.scale]).animate(
-      CurvedAnimation(parent: _animationController, curve: widget.curve),
-    )..addListener(() {
+      CurvedAnimation(parent: _animationController!, curve: widget.curve),
+    ) as Animation<double>..addListener(() {
         setState(() {});
       });
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController!.dispose();
     super.dispose();
   }
 
@@ -58,14 +58,14 @@ class _State extends State<TapScaleAnimated>
       behavior: this.widget.behavior,
       onTapDown: (details) {
         //print("onTapDown");
-        _animationController.forward();
+        _animationController!.forward();
       },
       onTapUp: (details) async {
         //print("onTapUp");
 
         await Future.delayed(Duration(
             milliseconds: (widget.duration.inMilliseconds * 0.9).floor()));
-        _animationController.reverse();
+        _animationController!.reverse();
         if (widget.onTap != null) {
           widget.onTap();
         }
