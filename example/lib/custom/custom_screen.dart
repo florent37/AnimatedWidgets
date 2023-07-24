@@ -27,15 +27,15 @@ class _CustomScreenState extends State<CustomScreen> {
                 final int displayedDate = (2018 * percent).floor();
                 return Container(
                     padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(border: Border.all(color: Colors.blue)),
+                    decoration:
+                        BoxDecoration(border: Border.all(color: Colors.blue)),
                     child: Text(
                       "current year : $displayedDate",
                       style: TextStyle(color: Colors.blue),
                     ));
               },
             ),
-            RaisedButton(
-              color: Colors.blue,
+            ElevatedButton(
               child: Text(
                 _enabled ? "reverse" : "forward",
                 style: TextStyle(color: Colors.white),

@@ -37,8 +37,7 @@ class _ComposeScreenState extends State<ComposeScreen> {
                     ),
                   )),
             ),
-            RaisedButton(
-              color: Colors.blue,
+            ElevatedButton(
               child: Text(
                 _enabled ? "dismiss" : "display",
                 style: TextStyle(color: Colors.white),

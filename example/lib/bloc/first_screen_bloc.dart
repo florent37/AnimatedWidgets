@@ -12,8 +12,9 @@ class FirstScreenViewState {
 }
 
 class FirstScreenBloc extends Bloc {
-  final _viewState = BehaviorSubject<FirstScreenViewState>.seeded(FirstScreenViewState());
-  Observable<FirstScreenViewState> get viewState => _viewState;
+  final _viewState =
+      BehaviorSubject<FirstScreenViewState>.seeded(FirstScreenViewState());
+  Stream<FirstScreenViewState> get viewState => _viewState;
 
   FirstScreenBloc() {
     _viewState.add(FirstScreenViewState(buttonVisible: false));
