@@ -22,19 +22,22 @@ class _SizeScreenState extends State<SizeScreen> {
             SizeAnimatedWidget(
               enabled: this._enabled,
               duration: Duration(milliseconds: 1500),
-              values: [Size(100, 100),  Size(100, 150), Size(200, 150), Size(200, 200)],
+              values: [
+                Size(100, 100),
+                Size(100, 150),
+                Size(200, 150),
+                Size(200, 200)
+              ],
               curve: Curves.linear,
               child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.blue)
-                ),
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.blue)),
                 child: FlutterLogo(
                   style: FlutterLogoStyle.stacked,
                 ),
               ),
             ),
-            RaisedButton(
-              color: Colors.blue,
+            ElevatedButton(
               child: Text(
                 _enabled ? "reverse" : "forward",
                 style: TextStyle(color: Colors.white),

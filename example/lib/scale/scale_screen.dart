@@ -33,8 +33,7 @@ class _ScaleScreenState extends State<ScaleScreen> {
                 ),
               ),
             ),
-            RaisedButton(
-              color: Colors.blue,
+            ElevatedButton(
               child: Text(
                 _enabled ? "reverse" : "forward",
                 style: TextStyle(color: Colors.white),

@@ -27,16 +27,14 @@ class _ShakeScreenState extends State<ShakeScreen> {
               child: Container(
                 width: 200,
                 height: 200,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.blue)
-                ),
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.blue)),
                 child: FlutterLogo(
                   style: FlutterLogoStyle.stacked,
                 ),
               ),
             ),
-            RaisedButton(
-              color: Colors.blue,
+            ElevatedButton(
               child: Text(
                 _enabled ? "pause" : "start",
                 style: TextStyle(color: Colors.white),
